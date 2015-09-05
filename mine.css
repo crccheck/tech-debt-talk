@@ -1,0 +1,37 @@
+.reveal section .text-logo {
+  background: none;
+  border: 0;
+  box-shadow: inherit;
+  display: inline-block;
+  height: 1em;
+  margin-bottom: inherit;
+  text-align: left;
+}
+/*q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before, q:after {
+  font-size: 2em;
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+*/
+
+.text-shadow h2, .text-shadow p {
+  text-shadow: 0 0 2px black;
+}
+
+.side-img {
+  float: right;
+  margin-bottom: 1em !important;
+  margin-left: 1em !important;
+  max-width: 40%;
+}
+
+.side-img img {
+  border: 0 !important;
+}
