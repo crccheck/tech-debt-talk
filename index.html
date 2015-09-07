@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>reveal.js - The HTML Presentation Framework</title>
+    <title>Managing Technical Debt - Chris Chang - DjangoCon US '15</title>
 
     <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
     <meta name="author" content="Hakim El Hattab">
@@ -20,7 +20,7 @@
     <!-- Code syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
-    <link rel="stylesheet" href="mine.css">
+    <link rel="stylesheet" href="css/mine.css">
 
     <!-- Printing and PDF exports -->
     <script>
@@ -37,9 +37,7 @@
   </head>
 
   <body>
-
     <div class="reveal">
-
       <!-- Any section element inside of this container is displayed as a slide -->
       <div class="slides">
 
@@ -50,30 +48,40 @@
 
 
 
-
 <section data-background="images/pony-stone.png" data-background-position="50% 90%" data-background-size="40%">
-  <h1>Mjanaging Tjechnical Djebt</h1>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
+  <h1 style="margin-bottom: 2em;">Mjanaging Tjechnical Djebt</h1>
+  <!-- django pony http://www.istockphoto.com/vector/fairy-tale-vector-elements-3355498?st=3eb57c4 -->
+  <!-- Stone of Triumph from The Simpsons Tapped Out game -->
 </section>
 
-<section data-background="images/me.jpg" class="text-shadow">
-  <h2>About me</h2>
-  <p>
-    Chris Chang<br>
-    <a href="https://github.com/crccheck" target="_blank">github/crccheck</a><br>
-    <a href="https://twitter.com/ccrrccrccrr/" target="_blank">@ccrrccrccrr</a><br>
-    <a href="#">imdb/chris chang(II)</a><br>
-  </p>
-  <p>
-    <a href="http://www.tabbedout.com" target="_blank">
-      <img class="text-logo" src="images/tabbedout.png" alt="TabbedOut" style="height: 2em">
-    </a><br>
-    formerly <a href="http://www.texastribune.org" target="_blank">
-      <img class="text-logo" src="images/the-texas-tribune.png" alt="The Texas Tribune"
-           style="position: relative; top: 5px;">
-    </a>
-  </p>
+<section id="me" data-background="images/me.jpg">
+  <div class="text-shadowbox">
+    <h2>Chris Chang</h2>
+    <p>
+      <a href="https://github.com/crccheck" target="_blank">github/crccheck</a><br>
+      <a href="https://twitter.com/ccrrccrccrr/" target="_blank">@ccrrccrccrr</a><br>
+      <a href="#">imdb/chris chang(II)</a><br>
+      <a href="https://www.pinterest.com/cpanel/" target="_blank">pinterest/cpanel</a>
+    </p>
+    <p>
+      <a href="http://www.tabbedout.com" target="_blank">
+        <img class="text-logo" src="images/tabbedout.png" alt="TabbedOut" style="height: 2em">
+      </a><br>
+      formerly <a href="http://www.texastribune.org" target="_blank">
+        <img class="text-logo" src="images/the-texas-tribune.png" alt="The Texas Tribune"
+             style="position: relative; top: 5px;">
+      </a>
+    </p>
+  </div>
+  <aside class="notes" data-markdown>
+    started at the texas tribune a n00b, what I wish I knew when I started
+TabbedOut has a lot of mature projects, what I learned from that
+I’ve been using Django since version 1.2? My 4th DjangoCon.
+
+Thanks for letting me talk about a topic I care a lot about. I love talking about this subject, but it’s usually not 45 minutes
+
+Please save all your questions for the end, but feel free to applause
+  </aside>
 </section>
 
 <section class="slide">
@@ -81,111 +89,165 @@
     <h2>What is technical debt?</h2>
     <ul>
       <li>
+        <blockquote cite="https://en.wikipedia.org/wiki/Technical_debt">
           [Technical debt] can be thought of as work that needs to be done before a particular job can be considered complete or proper.
-          <cite>
-           Wikipedia
             <sup style="white-space:nowrap;" class="noprint Inline-Template Template-Fact">[<i><strong class="selflink"><span title="Wikipedia:Citation needed">citation needed</span></strong></i>]</sup>
-          </cite>
+        </blockquote>
       </li>
       <li>
-          <q>Left unchecked, technical debt will ensure that the only work that gets done is unplanned work!</q> p196
-          <cite>
-            p196
-          </cite>
+        <blockquote cite="The Phoenix Project, page 196">
+          Left unchecked, technical debt will ensure that the only work that gets done is unplanned work!
+        </blockquote>
       </li>
-      <li>Every line of code is technical debt (EXPLAIN)</li>
+      <li>Every line of code is technical debt</li>
+    </ul>
+    <aside class="notes" data-markdown>
+Everyone starts their talks with dictionary definitions. There’s dictionary definitions of technical debt
+
+EVERY LINE: Every line was written for a reason, you have to know why
+
+So the trick we’re trying to pull off is how to move forward with as little
+technical debt as possible.
+
+No definition in Urban Dictionary
+    </aside>
+  </section>
+
+  <section data-background="images/urban-dictionary-technical-debt.png" data-background-size="50%"></section>
+</section>
+
+<section>
+  <section data-transition="none">
+    <ul>
+      <li>When you fix one bug only to create another</li>
+      <li class="fragment">
+        When you can’t deliver a feature because you don’t know what will break
+      </li>
+      <li class="" style="visibility: hidden;">
+        If you’re using a rapid development framework and can’t rapidly develop
+      </li>
+      <li class="" style="visibility: hidden;">&ldquo;it works for me&rdquo;</li>
+      <li class="" style="visibility: hidden;">
+        Everything is on fire all the time
+        <img src="images/this-is-fine.png" alt="">
+      </li>
     </ul>
   </section>
-  <section class="slide">
-    <img src="images/urban-dictionary-technical-debt.png" alt="">
+
+  <section data-transition="none">
+    <ul>
+      <li>When you fix one bug only to create another</li>
+      <li>When you can’t deliver a feature or security patch because you don’t know what will break</li>
+      <li class="fragment">
+        If you’re using a rapid development framework and can’t rapidly develop
+      </li>
+      <li class="fragment">&ldquo;It works for me&rdquo;</li>
+      <li class="fragment">
+      <a href="http://gunshowcomic.com/648">
+        <img src="images/this-is-fine.png" alt="" style="float: right; height: 250px; position: relative; top: -50px;">
+      </a>
+        <!-- http://gunshowcomic.com/648 -->
+        Everything is on fire all the time
+      </li>
+    </ul>
+    <aside class="notes">
+
+I can laugh about these, because now that I am an expert, I never have to deal
+with these again :niran-laugh:
+
+Frustration levels are high because you never deliver, never move forward
+
+You may have realized this when someone put prototype code into production and now you have to maintain it.
+
+Django lets you build things very quickly. So developers will start off loving Django. But if you build without regard to technical debt, you stop being able to deliver. Django turns into a nightmare and now Django becomes the scapegoat for your organization.
+    </aside>
   </section>
+
+  <section id="fire" data-background="images/fire.gif"></section>
+  <!-- TODO citation -->
 </section>
 
+<section data-background="images/tiny_belly_code.png" data-background-size="40%"></section>
+
 <section>
-  <ul>
-    <li>
-      When you fix one bug only to create another
-    </li>
-    <li class="fragment">
-      When you can’t deliver a feature because you don’t know what will break
-    </li>
-    <li class="" style="visibility: hidden;">
-      If you’re using a rapid development framework and can’t rapidly develop
-    </li>
-    <li class="" style="visibility: hidden;">&ldquo;it works for me&rdquo;</li>
-    <li class="" style="visibility: hidden;">
-      Everything is on fire all the time
-      <img src="images/this-is-fine.png" alt="">
+  <h1>Some tips</h1>
+  <ul style="display: block;">
+    <li><strong>YOU:</strong> Change how you code</li>
+    <li><strong>TEAM:</strong> Workflow practices you can put in place as a team</li>
+    <li><strong>ORG:</strong> Organizational changes
     </li>
   </ul>
 </section>
 
 <section>
-  <ul>
-    <li>
-      When you fix one bug only to create another
-    </li>
-    <li>
-      When you can’t deliver a feature or security patch because you don’t know what will break
-    </li>
-    <li class="fragment">
-      If you’re using a rapid development framework and can’t rapidly develop
-    </li>
-    <li class="fragment">&ldquo;it works for me&rdquo;</li>
-    <li class="fragment">
-      Everything is on fire all the time
-      <img src="images/this-is-fine.png" alt="">
-    </li>
-  </ul>
-</section>
+  <section data-background-video="images/just-test-it.webm,images/just-test-it.mp4">
+    <h2 class="fragment" style="color: magenta; font-weight: 800; font-size: 3em; letter-spacing: 0.1em;">Tests. Do it.</h2>
+    <br><br><br>
+    <!-- <iframe src="http://gfycat.com/ifr/FrailImpishAnnashummingbird" frameborder="0" scrolling="no" width="413" height="392" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe> -->
+    <aside class="notes" data-markdown>
+There’s three other sessions about testing.
 
-<section>
-  <h2>Fix it</h2>
-  <div class="fragment" style="float: right;">
-    <img src="images/tiny_belly_code.png" alt="">
-  </div>
-  <p>You can't</p>
-  <ul class="fragment" style="display: block;">
-    <li>
-  YOU: Change how you code
-    </li>
-    <li>
-  TEAM: Workflow practices you can put in place
-    </li>
-    <li>
-  ORG: Organizational changes
-    </li>
-  </ul>
-</section>
-
-<section>
-  <h1>Here are my tips</h1>
-</section>
-
-<section>
-  <section>
-    <h2>Tests. <span class="fragment">Do it.</span></h2>
-    <iframe src="http://gfycat.com/ifr/FrailImpishAnnashummingbird" frameborder="0" scrolling="no" width="780" height="740" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe>
+Do it! Just do it! Don't let your dreams be dreams. Yesterday, you said
+tomorrow. So just do it! Make your dreams come true! Just do it!
+    </aside>
   </section>
 
   <section>
-    <h2>Tests</h2>
-    <p>
-      You may decide to scrimp on tests in the beginning, but regression testing should be mandatory.
+    <h2>When to test</h2>
+    <p>You may decide to scrimp on tests in the beginning, but regression testing should be mandatory.</p>
+    <p>If you're making an assumption, you should be writing a test.</p>
+    <p>You will sleep better at night with good test coverage.</p>
+    <aside class="notes" data-markdown>
+Someone once told me, if you’re making an assumption, you should be writing a test. (it was at #austinjs)
+
+The reason regression testing is more important than tests is recurring bugs
+are a real embarrassment. “fool me once, shame on you. Fool me - you
+can't get fooled again.”
+    </aside>
+  </section>
+
+  <section id="zipcode">
+    <h2>Test your assumption</h2>
+    <pre><code class="lang-python" data-trim>
+def zipcode(s):
+    """
+    Get the 5 digit zipcode from any zipcode format.
+
+    >>> zipcode('12345')
+    "12345"
+    >>> zipcode('12345-6789')
+    "12345"
+    >>> zipcode(12345)
+    "12345"
+    >>> zipcode(1337)
+    "01337"
+    >>> zipcode(None)
+    ValueError: s must be a US postal zip code
+    """
+    return s[:5]
+    </code></pre>
+    <!-- <script src="https://gist.github.com/crccheck/620f03ba30522f2d8d4b.js"></script> -->
+    <aside class="notes">
+oh yeah, one more thing. if you’re not sure if you should write a test, then...
+    </aside>
+  </section>
+
+  <section>
+    <h2>Don't have a single test?</h2>
+    <p>Gotta start somewhere.</p>
+    <pre><code class="lang-python" data-trim>
+from django.test import TestCase
+
+
+class HomeTests(TestCase):
+    def test_homepage_loads(self):
+        self.client.get('/')
+    </code></pre>
+    <p><small><a href="http://blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/" target="_blank">blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/</a></small>
     </p>
-    <p>
-      If you're making an assumption, you should be writing a test.
-    </p>
   </section>
 
-  <section>
-    <h2>Example</h2>
-    <script src="https://gist.github.com/crccheck/620f03ba30522f2d8d4b.js"></script>
-  </section>
-
-  <section>
-    <img src="images/if-you-liked-it.jpg" alt="If you liked it, then you should have put a test on it.">
-  </section>
+  <section data-background="images/if-you-liked-it.jpg" data-background-size="65%"></section>
 </section>
 
 <section>
@@ -198,32 +260,34 @@
   <section>
     <h2>Signs your tests are crappy</h2>
     <ul>
-      <li>Can other people jump in?</li>
-      <li>Are tests getting maintained? Or do you groan when you have to touch tests.</li>
+      <li>Can other people read and extend them?</li>
+      <li>Are tests getting maintained? Or are they a source of frustration?</li>
       <li>
         Do your tests describe the problem in a way where someone could throw
         away the code and use the tests as a spec?
       </li>
     </ul>
+    <aside class="notes">
+      We'll revisit tests later.
+    </aside>
   </section>
 </section>
 
-<section>
-  <h2>Bitrot</h2>
-  <div class="side-img">
-    <img src="images/bitrot.jpg" alt="">
-  </div>
+<section data-background="images/bitrot.jpg" data-background-position="98% 55%" data-background-size="25%">
+  <h2>Bitrot / Software entropy</h2>
+  <div style="float: right; width: 27%; height: 400px;">&nbsp;</div>
   <p>If you're not touching something, it's getting worse</p>
-  <p>Code entropy</p>
+  <p>If you don't have the manpower to continously touch all your code and documentation, that's a smell</p>
   <p>Improvement Kata - Mike Rother</p>
-  <p>If you don't have the manpower to continously touch all your code and documentation, that's a smell.</p>
 </section>
 
 <section>
   <section>
     <h2>Continous integration</h2>
-    <p>You may not have the time to do everything, so automate it</p>
-    <p><q>&ldquo;Any task you do at least once a month should take less time than it takes to get a cup of coffee&rdquo;</q><sup>&dagger;</sup></p>
+    <blockquote>
+      &ldquo;Any task you do at least once a month should take less time than it takes to get a cup of coffee&rdquo;
+      <sup>&dagger;</sup>
+    </blockquote>
     <ul>
       <li>Jenkins</li>
       <li>TravisCI</li>
@@ -231,30 +295,78 @@
       <li><a href="http://docs.python-guide.org/en/latest/scenarios/ci/">docs.python-guide.org/en/latest/scenarios/ci/</a></li>
     </ul>
     <p>
-    <small><sup>&dagger;</sup> Original: <a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">Any system that must be deployed more often than monthly does so faster than you can get a cup of coffee.</a></small>
+    <small><sup>&dagger;</sup>Original: <a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">Any system that must be deployed more often than monthly does so faster than you can get a cup of coffee.</a></small>
     </p>
+    <aside class="notes" data-markdown>
+      Having continous integration means you have a reproducible environment
+      so you're not allowed to say "it works for me" anymore.
+
+      Know what's better than having to do just one little step? Having to do zero.
+
+      Tox has multidimentional stuff now that is great and lets you try the same
+      code on a matrix of Python and Django versions.
+
+      If you automate the routine things away, you get to do fun creative things.
+    </aside>
   </section>
+
   <section>
     <div>
       <img src="images/is_it_worth_the_time.png" alt="">
     </div>
-    <cite>https://xkcd.com/1205/</cite>
+    <small><cite><a href="https://xkcd.com/1205/">xkcd/1205</a></cite></small>
+  </section>
+
+  <section>
+    <div>
+      <img src="images/automation.png" alt="">
+    </div>
+    <small><cite><a href="https://xkcd.com/1319/">xkcd/1319</a></cite></small>
   </section>
 </section>
 
 <section>
   <section>
     <h2>Code quality</h2>
-    <p>
-      Practice makes perfect. Always be iterating.
-    </p>
-    <p>Keep things simple. Code that requires less context to understand.</p>
-    <p>Know your audience.</p>
-    <p>Choose readability over performance.</p>
-    <p><code>import this</code></p>
+    <ul>
+      <li>Practice makes perfect. Always be iterating.</li>
+      <li>Keep things simple. Code that requires less context to understand is more readable.</li>
+      <li>Know your audience.</li>
+      <li>Choose readability over performance.</li>
+      <li><code>import this</code></li>
+    </ul>
+    <aside class="notes" data-markdown>
+Always be iterating works best when you can touch all your code.
+
+Avoid magic and cleverness. I found that whenever I write clever code,
+I'll naturally refactor it to be dumber.
+
+oh, you just learned about __getattr__ and now you want to use it everywhere? Have fun trying to figure out why things randomly don’t work.
+
+the idea of keeping things simple isn’t to handicap yourself from using fancy
+language features, to avoid special snowflake patterns that are only used once
+and require more context to read. Are you writing something only you will
+understand?
+
+Know your audience -- If you're doing scientific python, using Pandas to
+do a filter is fine. Importing pandas just to do a simple filter in a view
+would be ridiculous.
+    </aside>
   </section>
+
   <section>
-    <pre>>>> import this
+    <pre><code data-trim>
+&gt;&gt;&gt; improt this
+  File "&lt;stdin>", line 1
+    improt this
+              ^
+SyntaxError: invalid syntax
+    </code></pre>
+  </section>
+
+  <section>
+    <pre><code data-trim>
+&gt;&gt;&gt; import this
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -265,27 +377,35 @@ Flat is better than nested.
 Sparse is better than dense.
 Readability counts.
 Special cases aren't special enough to break the rules.
-Although practicality beats purity.
-Errors should never pass silently.
-Unless explicitly silenced.
-In the face of ambiguity, refuse the temptation to guess.
-There should be one-- and preferably only one --obvious way to do it.
-Although that way may not be obvious at first unless you're Dutch.
-Now is better than never.
-Although never is often better than *right* now.
-If the implementation is hard to explain, it's a bad idea.
-If the implementation is easy to explain, it may be a good idea.
-Namespaces are one honking great idea -- let's do more of those!
-    </pre>
+...
+    </code></pre>
   </section>
+
   <section>
-    <script src="https://gist.github.com/crccheck/84d0a4d17a55827269c5.js"></script>
+    <pre><code class="python" data-trim>
+from operators import attrgetter
+
+friends = [
+    aquacorg,
+    corgnelius,
+    stumphery,
+    gatsby,
+    scout,
+    tibby,
+    winston,
+]
+
+# Which is better?
+accounts = map(attrgetter('instagram'), friends)
+
+accounts = [x.instagram for x in friends]
+    </code></pre>
   </section>
   <section>
     <h2>Related topics</h2>
     <ul>
-      <li>#nocomments - Do comments help or hurt readability?</li>
-      <li>cyclomatic complexity - quantify readability</li>
+      <li>#nocomments &ndash; Do comments help or hurt readability?</li>
+      <li>Cyclomatic complexity &ndash; quantify readability</li>
       <li><a href="https://pypi.python.org/pypi/mccabe">McCabe</a></li>
       <li>PEP8</li>
       <li>PyFlakes</li>
@@ -294,20 +414,39 @@ Namespaces are one honking great idea -- let's do more of those!
 </section>
 
 <section>
-  <section>
+  <section data-background="images/snake-fire.gif" data-background-position="50% 95%" data-background-size="27%">
     <h2>Code review</h2>
     <p>This is the single most practical way to get better.</p>
     <ul>
       <li><q>People take too much time to review</q></li>
       <li><q>I'm the boss</q></li>
-      <li><q>We need to push this hotfix for production</q></li>
+      <li><q>We need to push this hotfix for production ASAP</q></li>
     </ul>
+    <br><br><br>
+    <br><br><br>
+    <aside class="notes" data-markdown>
+Maybe you're the boss, or maybe even big boss
+
+Spread the blame
+
+Coding under pressure
+    </aside>
   </section>
 
   <section>
     <p>Sleep on it</p>
     <p>Practice with others on open source projects</p>
-    <p><a href="https://www.youtube.com/watch?v=wf-BqAjZb8M">Raymon Hettinger - Beyond PEP 8</a></p>
+    <blockquote cite="Proverbs 27:17">
+    As iron sharpens iron, so one person sharpens another.
+    </blockquote>
+    <aside class="notes" data-markdown>
+
+Small team? working alone? Sleep on it. Open pull requests anyways. Seeing your
+diff at a higher level will give you a new perspective.
+
+Don't be afraid of criticism. (teams? don't hire assholes?)
+
+    </aside>
   </section>
 </section>
 
@@ -315,64 +454,190 @@ Namespaces are one honking great idea -- let's do more of those!
   <section>
     <h2>Pull requests</h2>
     <p>The rule is: one pull request = one change</p>
+    <p><img src="images/corgi-horse.jpg" alt="" height=230></p>
+    <aside class="notes">
+      smaller pull requests = faster reviews and you can move on.
+      bike shedding
+      tighter feedback loops
+    </aside>
   </section>
 
   <section>
     <h2>Boy scout rule</h2>
-    “Leave this world a little better than you found it.” - Robert Baden Powell
-    <p>If you have to touch a test while you clean, leave it alone for now.</p>
-  </section>
+    <p>
+    <q>Leave this world a little better than you found it.</q> &ndash; Robert Baden Powell
+    </p>
+    <p>If you have to touch a test to clean something, leave it alone for now.</p>
 
-  <section>
-    Technical debt note
-  </section>
-</section>
-
-<section>
-  <h2>Pair programming</h2>
-  <img src="images/pair-programming.jpg" alt="">
-  <p>Ping pong</p>
-</section>
-
-<section>
-  <section>
-    <h2>Teams</h2>
-  </section>
-
-  <section>
-
-  </section>
-</section>
-
-<section>
-  <section>
-    <h2>Culture</h2>
-    <p>Admit that technical debt is a problem</p>
-    <p>Features aren't done when the code is done, docs too.</p>
-    <p>Make yourself obsolete. Work like you're training your replacement</p>
-    <p>Go on vacation without your laptop</p>
-  </section>
-  <section>
-    <p>Learn how to say "NO</p>
-    <p>Work to get faster feedback loops</p>
-    <p>Embrace failure</p>
-    <p>The seeds of technical debt are sown by product development</p>
-  </section>
-
-  <section>
-    <p>Treat paying off technical debt as a feature</p>
-    <p>Write up concrete plans to reduce technical debt as actionable items with definitions of done</p>
-    <p>Upgrade Django to version 1.8.3</p>
-  </section>
-
-  <section>
-    <h2>Agile</h2>
-    <p>Despite what you think about Agile, and what you can actually implement, you can take the pieces you like, try out things, and improve
-Be involved in improving the process.</p>
     <aside class="notes" data-markdown>
-      A lot agile is just common sense.
+Do a good turn daily?
+Be Prepared?
+
+THE RULE IS: You should break this rule. Well, bend. If you see something while
+writing code, you should fix it as long as it doesn’t hurt the readability of
+the pull request. if it does, make a ticket to clean it up.
+
     </aside>
   </section>
+
+  <section>
+    <h2>Code review is more than reviewing code</h2>
+    <!-- Needed to left justify all this -->
+    <div style="display: inline-block; text-align: left;">
+      <ul>
+        <li>Repeatable?</li>
+        <li>Documentated?</li>
+        <li>Maintainable? (Does the feature justify the technical debt?)</li>
+      </ul>
+      <p><a href="https://www.youtube.com/watch?v=wf-BqAjZb8M">Raymond Hettinger - Beyond PEP 8</a></p>
+    </div>
+    <aside class="notes" data-markdown>
+Code review is more than just checking syntax and style. See Ray H’s beyond
+pep-8 pycon 2015, which may be the most recommended video ever.
+
+REPEATABLE EXAMPLE: Last week (August 2015) I used a utility to make a request
+and it wasn't working, so I went back to the pull requests that added the
+feature and saw that I had a typo.
+
+DOCUMENTED EXAMPLE: If you're adding a new feature to the CMS, updating and
+communicating to users that there's a change is part of definition of done.
+
+EXAMPLE: You may have decided to implement something with a custom templatetag
+but during code review, you decide to use a jquery one-liner.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Technical debt note</h2>
+    <blockquote cite="http://www.lbb.state.tx.us/FiscalNotes.aspx">
+      A fiscal note is a written estimate of the costs, savings, revenue gain, or revenue loss that may result from implementation of requirements in a bill or joint resolution. It serves as a tool to help legislators better understand how a bill might impact the state budget as a whole, individual agencies, and in some instances, local governments.
+    </blockquote>
+    <aside class="notes" data-markdown>
+Depends on your organization
+
+It's more than just stating what the LOC change is, it’s more about documenting
+how much this feature costs. Do you have the ability to pay the debt you’re
+about to create? And if a pull request says it comes with a lot of technical
+debt, you’ll be able to plan ahead better. Making sure everyone is cognizant of
+the debt being made. Note for code reviewers for if just one small thing is
+especially smelly so they can pay special attention to it.
+
+concrete example: nodejs proxy, well now we need node knowledge. Adding a
+snowflake pattern, adding a Vary cookie to page that did not have one before.
+
+> decreases because of deletions, looser coupling between this and higher ed,
+> and modernized higher ed to work with newer django
+
+> decreases because whaaaaat is all this crazy logic that was there before?
+
+> increases to add an oft requested feature. there's very light test coverage.
+
+> decreases because this adds documentation and removes non .env file workflows
+
+    </aside>
+  </section>
+</section>
+
+
+<section id="pair" data-background="images/pair-programming.gif" data-background-size="20%" data-background-position="100% 55%">
+  <!-- http://translatorsanonymous.tumblr.com/post/123721193222/got-a-cat-tool-for-my-cat-tool-when-newbie -->
+  <h2>Pair programming</h2>
+  <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
+  <!-- <a href="https://youtu.be/dYBjVTMUQY0" target="_blank"><img src="images/pair-programming.jpg" alt="" style="margin: 0;"></a> -->
+  <p>The best way to up code quality and share knowledge</p>
+  <ul>
+    <li>tmux + vim</li>
+    <li>Driver + Navigator</li>
+    <li>Ping pong pair programming</li>
+  </ul>
+  <aside class="notes" data-markdown>
+this costs the most time, but has a excellent long term benefits. Code review
+with even tighter feedback loop.
+
+PING PONG: async pair programming
+  </aside>
+</section>
+
+
+<section data-background="images/PowerRangers.jpg">
+  <!-- captain planet? -->
+  <!-- TMNT -->
+  <div class="text-shadowbox">
+    <h2>Teams</h2>
+    <p>Guess what? Software teams are just like other teams.</p>
+    <p>Hire coworkers you get along with.</p>
+    <p><q>Past you is the worst coworker ever</q></p>
+  </div>
+  <aside class="notes" data-markdown>
+avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
+
+what about if you’re alone? well, you just have to learn through experience.
+working with past self is a lot like workign with a terrible coworker.
+
+When I interview now, I assume they passed technical test already. I ask
+cultural fit questions. What kind of ice cream do you like?
+
+  </aside>
+</section>
+
+<section>
+  <section data-background="images/corgi-beach.jpg" data-background-position="98% 98%" data-background-size="25%">
+    <h2>Culture</h2>
+    <ul>
+      <li>Work to get faster feedback loops</li>
+      <li>Learn how to say "NO"</li>
+      <li>Embrace failure</li>
+      <li>Make yourself obsolete. Work like you're training your replacement</li>
+      <li>Go on vacation without your laptop</li>
+    </ul>
+    <br><br>
+    <aside class="notes" data-markdown>
+Work to stop the endless stream of small tasks that keep coming in.
+    </aside>
+  </section>
+
+  <section>
+    <ul>
+      <li>Admit that technical debt is a problem</li>
+      <li>The seeds of technical debt are sown upstream by product development</li>
+      <li>Treat paying off technical debt as a feature</li>
+      <li>
+        Write up concrete plans to reduce technical debt as actionable items with definitions of done
+        <ul>
+          <li><img src="images/emoji.png" alt="" style="background: none; border: none; height: 1em; margin: 0;"></li>
+          <li><q>Upgrade Django to version 1.8.3</q></li>
+          <li><q>Change views in app Y to use new base view from app X</q></li>
+        </ul>
+      </li>
+    </ul>
+    <aside class="notes" data-markdown>
+
+It's hard to communicate to the business side that adding what seems like a
+simple feature is actually difficult (especially if you used to be fast;
+thanks, technical debt!) perhaps you've deployed a lot of prototype and WIP
+code. And it's hard to justify taking time to do a task that isn't a feature.
+
+I like making lists of technical debt with rankings. I use :fire: :poop: and
+table flip to indicate how serious the problem is, how embarassing it is, and
+how hard it is to fix.
+
+If everything is on fire all the time, that’s a bad time to plant a tree.
+    </aside>
+  </section>
+</section>
+
+<section id="agile" data-background="images/corgi-go-round.gif">
+  <div class="text-shadowbox dark">
+    <h2>Agile</h2>
+    <p>Always be iterating the process.</p>
+  </div>
+  <aside class="notes" data-markdown>
+
+Despite what you think about Agile, and what you can actually implement, you
+can take the pieces you like
+
+A lot agile is just common sense.
+  </aside>
 </section>
 
 <section>
@@ -387,6 +652,19 @@ Be involved in improving the process.</p>
     <h2>Don't customize the Django admin</h2>
     <p>The admin is a developer interface, not a CMS</p>
     <p>Writing your own seems like it's more technical debt, but you'll end up with a better user experience</p>
+    <aside class="notes">
+
+      Are writing Selenium tests for custom admin behavior? BEcause that's what
+      you have to do if you start customizing the admin. Lots of intersecting
+      code. If you need a custom interface, write it. Bits of the admin are
+      often re-usable outside the admin (permissions, require-login). Use third
+      party admin integrations that are maintained, don’t do it yourself. If
+      you write something that changes, are you going to read through every
+      Django release note? it turns out depended on some behavior that changed,
+      it’s going to be more expensive to discover it broke without CI and since
+      admin things tend to be hacky, more expensive to fix/maintain in general.
+
+    </aside>
   </section>
 
   <section>
@@ -396,40 +674,148 @@ Be involved in improving the process.</p>
     </a>
   </section>
 
-  <section>
-    <h2>Clean as you cook</h2>
-    <p>Delete code! That's what source control is for.</p>
-    <p>If you think you'll need to toggle something, don't use comments, use a feature switch.</p>
-    <img src="images/dirty_dishes.jpg" alt="">
+  <section data-background="images/dirty_dishes.jpg">
     <!-- https://commons.wikimedia.org/wiki/File:Dirty_dishes.jpg -->
+    <div class="text-shadowbox dark">
+      <h2>Clean as you cook</h2>
+      <p>Delete code! That's what source control is for.</p>
+      <p>If you think you'll need to toggle something, don't use comments, use a feature switch.</p>
+      Open tickets for things you find. See boy scout rule
+    </div>
   </section>
 
-  <section>
+  <section id="names" data-background="images/aintfoundshit.jpg" data-background-position="96% 50%" data-background-size="23%">
     <h2>Naming things</h2>
+    <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
     <p>Is it greppable?</p>
     <p>Use unique app and model names</p>
     <p>Name variables (especially in tests) so they read like English</p>
+    <aside class="notes" data-markdown>
+      Wed 11:50 am
+    <a href="https://2015.djangocon.us/schedule/presentation/48/">The Other Hard Problem: Lessons and Advice on Naming Things</a>
+    Jacob Burch
+    </aside>
   </section>
 
   <section>
+    <h2>Readable tests</h2>
+    <p>Keep boilerplate out.</p>
+    <pre><code data-trim class="lang-python">
+class ArticleManagerTests(TestCase):
+    def test_stuff(self):
+        a = Article(active=True,
+                    title='Corgi Beach Day',
+                    slug='corgi-beach-day',
+                    text='Corgs got sand on their stumpers'
+                    pub_date='2015-09-31')
+        self.assertIn(a, Article.objects.active())
+
+    def test_active_returns_only_active_articles(self):
+        article = ArticleFactory(active=True)
+        self.assertIn(article, Article.objects.active())
+    </code></pre>
+    <aside class="notes">
+       Factoryboy makes it so the attributes you specify are the ones that are relevant to the test.
+    </aside>
+  </section>
+  <section>
     shell_plus screenshot here
+    <aside class="notes">
+      Yes, shell plus gives you ways around this, but at the cost of more technical debt.
+    </aside>
   </section>
 
-  <section data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
+  <section>
+    <h2>Avoid the test client</h2>
+    <p>
+      Don’t use it! For unit tests.
+    </p>
+    <p>
+      Do Use it! For integration tests
+    </p>
+
+    :flow diagram here:
+    <aside class="notes" data-markdown>
+
+      the test client touches the url router, middleware, context processor.
+      It’s useful if you’re testing routes, headers
+
+    </aside>
+  </section>
+
+  <section>
+    <h2>Avoid model inheritance</h2>
+    <p>Mixins and Base classes</p>
+    <p>Hurts readability and performance</p>
+    TODO insert diagram here
+  </section>
+
+  <section id="fresh" data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
     <h2>Stay fresh</h2>
-    <h3>requirements.txt</h3>
+    <p><code>requirements.txt</code>:</p>
     <p>Every pull request, if a version can be bumped, bump it.</p>
-    <pre><code data-trim>
+    <pre><code class="lang-sh" data-trim>
 $ pip list --outdated
 $ bundle outdated
 $ npm outdated
     </code></pre>
     <p>This only works if you have test coverage!</p>
-    <!-- <img src="images/fresh-comp.png" alt=""> -->
+    <aside class="notes" data-markdown>
+Something I've always wanted to try is a Jenkins job that checks for updated
+requirements and tells me when they break.
+    </aside>
+  </section>
+</section>
+
+<section>
+  <section>
+    <h2>Trading technical debt</h2>
+    <p>Freezing content (Taco Bell Future)</p>
+    <p>Deciding up front what you're optimizing for</p>
+    <p>Adding deliberate code smells</p>
+INSERT chart here
+    <aside class="notes">
+Taco Bell future. At the Texas Tribune, we had big sections
+of the site that broke all the time when we didn’t expect it to. So we traded
+some caching and maintainability to get out out of our monolithic Django app.
+Now we could work on new code without worrying if we would break things.
+
+For startups, getting first to market is probably more important than
+building quality.
+
+Technical debt is an engineering trade-off. Good Cheap Fast, pick two
+
+Making code hard to maintain on purpose.
+    </aside>
+  </section>
+
+  <section data-background="images/goodcheapfast.png" data-background-size="40%">
+    <aside class="notes">
+Be aware of what you’re optimizing for. Don’t spend a long time building something small sloppily.
+    </aside>
   </section>
 
   <section>
+    <h2>The exceptions</h2>
+    <p>
+      My general rule is if you can do everything in one screen of code, you write as crappy as you want.
+    </p>
+    <p>
+      If you're writing throw away code, it should truly be disposable.
+    </p>
 
+    <aside class="notes">
+
+In fact, it should be crappy. Introduce code smells on purpose. If you have
+beautiful well tested code that was terrible. Premature optimization
+
+Just remember: when was the last time a proof of concept was put into production? (EVERY TIME)
+
+Refactor vs throw away (prototype) MVP
+The specs and docs are more important than the code
+
+Delivering value
+    </aside>
   </section>
 </section>
 
@@ -466,18 +852,16 @@ $ npm outdated
     <li>
     <a href="http://martinfowler.com/bliki/TechnicalDebt.html">martinfowler / TechnicalDebt</a>
     </li>
-    <li>
-    The Phoenix Project
-    </li>
+    <li>The Phoenix Project</li>
   </section>
   <section>
-    <img data-src="images/phoenix-project2.jpg" alt="" height="500px">
+    <img data-src="images/phoenix-project2.jpg" alt="" height="500px" style="border: 0;">
     &nbsp;
     &nbsp;
-    <img class="fragment" data-src="images/phoenix-project.jpg" alt="" height="500px">
+    <img class="fragment" data-src="images/phoenix-project.jpg" alt="" height="500px" style="border: 0;">
   </section>
 
-  <section data-background="images/bartkira-mutation.png" data-background-position="50% 140%" data-background-size="40%">
+  <section data-background="images/bartkira-mutation.png" data-background-position="50% 100%" data-background-size="40%">
     <h2>Similar discussions</h2>
     <ul>
       <li>Microservices vs Monoliths</li>
@@ -488,21 +872,39 @@ $ npm outdated
     </ul>
     <p>&nbsp;</p>
     <p>&nbsp;</p>
-    <p>&nbsp;</p>
-    <cite>
-      Frans Boukas, Barkira project
-    </cite>
+      <!-- Frans Boukas, Barkira project -->
   </section>
+</section>
+
+<section data-background="images/life-could-be-worse.png" data-background-position="98% 50%" data-background-size="27%">
+  <!-- Calvin and Hobbes by Bill Watterson -->
+  <h2>Homework</h2>
+  <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
+  <ul>
+    <li>Get frustrated</li>
+    <li>Get lazy &ndash; Automate away routine tasks</li>
+    <li>Faster feedback loops</li>
+    <li>Always be touching</li>
+    <li>Treat fixing technical debt as a feature</li>
+    <li>Clean as you code</li>
+    <li>Foster a good coding culture</li>
+    <li>Everything must be repeatable</li>
+  </ul>
 </section>
 
 <section>
   <section>
-    <h1>Thanks</h1>
-    <img data-src="images/sausage.png" alt="" style="border: 0; padding: 1em; border-radius: 2em;">
+    <h1>Thanks!</h1>
+    <img data-src="images/sausage.png" alt="" style="border: 0; padding: 0.3em 0.7em 0.7em; border-radius: 2em; height: 150px;">
+    <p>
+      <a href="https://github.com/crccheck/tech-debt-talk">github/crccheck/tech-debt-talk</a><br>
+      <a href="https://hub.docker.com/r/crccheck/tech-debt/">docker/crccheck/tech-debt</a><br>
+    </p>
   </section>
-  <section>
-    <img data-src="images/thatsthejoke.jpg" alt="">
-  </section>
+  <section></section>
+  <section id="taco" data-background="images/taco.jpg"></section>
+  <section id="derp" data-background="images/derp.jpg"></section>
+  <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
 </section>
       </div>
 
@@ -533,11 +935,11 @@ $ npm outdated
           { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
           { src: 'plugin/zoom-js/zoom.js', async: true },
-          { src: 'plugin/notes/notes.js', async: true }
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'socket.io/socket.io.js', async: true },
+          { src: 'plugin/notes-server/client.js', async: true }
         ]
       });
-
     </script>
-
   </body>
 </html>

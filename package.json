@@ -5,6 +5,7 @@
   "homepage": "http://lab.hakim.se/reveal-js",
   "subdomain": "revealjs",
   "main": "js/reveal.js",
+  "private": true,
   "scripts": {
     "test": "grunt test",
     "start": ""
@@ -22,10 +23,10 @@
     "node": "~0.10.0"
   },
   "dependencies": {
-    "underscore": "~1.5.1",
-    "express": "~2.5.9",
-    "mustache": "~0.7.2",
-    "socket.io": "~0.9.16"
+    "express": "^2.5.11",
+    "mustache": "^0.7.3",
+    "socket.io": "^0.9.17",
+    "underscore": "^1.5.2"
   },
   "devDependencies": {
     "grunt-contrib-qunit": "~0.5.2",

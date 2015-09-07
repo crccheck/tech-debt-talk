@@ -1,0 +1,54 @@
+.reveal section .text-logo {
+  background: none;
+  border: 0;
+  box-shadow: inherit;
+  display: inline-block;
+  height: 1em;
+  margin-bottom: inherit;
+  text-align: left;
+}
+/*q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before, q:after {
+  font-size: 2em;
+}
+q:before {
+  content: open-quote;
+}
+q:after {
+  content: close-quote;
+}
+*/
+.text-shadowbox {
+  background: rgba(0, 0, 0, 0.4);
+  display: inline-block;
+  padding: 0.2em 0.5em 0 !important;
+  border-radius: 0.5em;
+}
+.dark {
+  background: rgba(0, 0, 0, 0.6);
+}
+.text-shadowbox h2, .text-shadowbox p {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.side-img {
+  float: right;
+  margin-bottom: 1em !important;
+  margin-left: 1em !important;
+  max-width: 40%;
+}
+
+.side-img img {
+  border: 0 !important;
+}
+
+.reveal sup {
+  font-size: 0.6em;
+}
+
+/* OVERRIDES */
+.reveal blockquote {
+  width: auto;
+}
