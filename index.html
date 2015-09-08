@@ -148,7 +148,7 @@ with these again :niran-laugh:
         Everything is on fire all the time
       </li>
     </ul>
-    <aside class="notes">
+    <aside class="notes" data-markdown>
 Frustration levels are high because you never deliver, never move forward
 
 Django lets you build things very quickly. So developers will start off loving Django. But if you build without regard to technical debt, you stop being able to deliver. Django turns into a nightmare and now Django becomes the scapegoat for your organization.
@@ -442,12 +442,8 @@ Coding under pressure
     As iron sharpens iron, so one person sharpens another.
     </blockquote>
     <aside class="notes" data-markdown>
-
 Small team? working alone? Sleep on it. Open pull requests anyways. Seeing your
 diff at a higher level will give you a new perspective.
-
-Don't be afraid of criticism. (teams? don't hire assholes?)
-
     </aside>
   </section>
 </section>
@@ -457,10 +453,15 @@ Don't be afraid of criticism. (teams? don't hire assholes?)
     <h2>Pull requests</h2>
     <p>The rule is: one pull request = one change</p>
     <p><img src="images/corgi-horse.jpg" alt="" height=230></p>
-    <aside class="notes">
+    <aside class="notes" data-markdown>
       smaller pull requests = faster reviews and you can move on.
       bike shedding
       tighter feedback loops
+
+THE RULE IS: You should break this rule. Well, bend. If you see something while
+writing code, you should fix it as long as it doesn’t hurt the readability of
+the pull request. if it does, make a ticket to clean it up.
+
     </aside>
   </section>
 
@@ -471,10 +472,6 @@ Don't be afraid of criticism. (teams? don't hire assholes?)
     <aside class="notes" data-markdown>
 Do a good turn daily?
 Be Prepared?
-
-THE RULE IS: You should break this rule. Well, bend. If you see something while
-writing code, you should fix it as long as it doesn’t hurt the readability of
-the pull request. if it does, make a ticket to clean it up.
 
     </aside>
   </section>
@@ -491,8 +488,7 @@ the pull request. if it does, make a ticket to clean it up.
       <p><a href="https://www.youtube.com/watch?v=wf-BqAjZb8M">Raymond Hettinger - Beyond PEP 8</a></p>
     </div>
     <aside class="notes" data-markdown>
-Code review is more than just checking syntax and style. See Ray H’s beyond
-pep-8 pycon 2015, which may be the most recommended video ever.
+Code review is more than just checking syntax and style.
 
 REPEATABLE EXAMPLE: Last week (August 2015) I used a utility and it wasn't
 working, so I went back to the pull request and saw that I was using the
@@ -839,7 +835,7 @@ also just pick one if you want to.
       If you're writing throw away code, it should truly be disposable.
     </p>
 
-    <aside class="notes">
+    <aside class="notes" data-markdown>
 
 In fact, it should be crappy. Introduce code smells on purpose. If you have
 beautiful well tested code that was terrible. Premature optimization
