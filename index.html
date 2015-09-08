@@ -6,8 +6,7 @@
 
     <title>Managing Technical Debt - Chris Chang - DjangoCon US '15</title>
 
-    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-    <meta name="author" content="Hakim El Hattab">
+    <meta name="description" content="Managing Technical Debt, DjangoCon US 2015">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -74,14 +73,8 @@
     </p>
   </div>
   <aside class="notes" data-markdown>
-    started at the texas tribune a n00b, what I wish I knew when I started
-TabbedOut has a lot of mature projects, what I learned from that
 I’ve been using Django since version 1.2? My 4th DjangoCon.
-
-Thanks for letting me talk about a topic I care a lot about. I love talking about this subject, but it’s usually not 45 minutes
-
-Please save all your questions for the end, but feel free to applause
-  </aside>
+</aside>
 </section>
 
 <section class="slide">
@@ -106,8 +99,9 @@ Everyone starts their talks with dictionary definitions. There’s dictionary de
 
 EVERY LINE: Every line was written for a reason, you have to know why
 
-So the trick we’re trying to pull off is how to move forward with as little
-technical debt as possible.
+I've only been a professional software developer for 6 years this is what I've
+seen and these are the practical things I've seen to help combat technical
+debt.
 
 No definition in Urban Dictionary
     </aside>
@@ -132,6 +126,10 @@ No definition in Urban Dictionary
         <img src="images/this-is-fine.png" alt="">
       </li>
     </ul>
+    <aside class="notes">
+I can laugh about these, because now that I am an expert, I never have to deal
+with these again :niran-laugh:
+    </aside>
   </section>
 
   <section data-transition="none">
@@ -151,15 +149,11 @@ No definition in Urban Dictionary
       </li>
     </ul>
     <aside class="notes">
-
-I can laugh about these, because now that I am an expert, I never have to deal
-with these again :niran-laugh:
-
 Frustration levels are high because you never deliver, never move forward
 
-You may have realized this when someone put prototype code into production and now you have to maintain it.
-
 Django lets you build things very quickly. So developers will start off loving Django. But if you build without regard to technical debt, you stop being able to deliver. Django turns into a nightmare and now Django becomes the scapegoat for your organization.
+
+technical debt is what you feel the next time you want to make a change - Gene Kim
     </aside>
   </section>
 
@@ -194,8 +188,8 @@ tomorrow. So just do it! Make your dreams come true! Just do it!
 
   <section>
     <h2>When to test</h2>
-    <p>You may decide to scrimp on tests in the beginning, but regression testing should be mandatory.</p>
     <p>If you're making an assumption, you should be writing a test.</p>
+    <p>You may decide to scrimp on tests in the beginning, but regression testing should be mandatory.</p>
     <p>You will sleep better at night with good test coverage.</p>
     <aside class="notes" data-markdown>
 Someone once told me, if you’re making an assumption, you should be writing a test. (it was at #austinjs)
@@ -227,9 +221,6 @@ def zipcode(s):
     return s[:5]
     </code></pre>
     <!-- <script src="https://gist.github.com/crccheck/620f03ba30522f2d8d4b.js"></script> -->
-    <aside class="notes">
-oh yeah, one more thing. if you’re not sure if you should write a test, then...
-    </aside>
   </section>
 
   <section>
@@ -245,6 +236,9 @@ class HomeTests(TestCase):
     </code></pre>
     <p><small><a href="http://blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/" target="_blank">blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/</a></small>
     </p>
+    <aside class="notes">
+NEXT SLIDE: oh yeah, one more thing. if you’re not sure if you should write a test, then...
+    </aside>
   </section>
 
   <section data-background="images/if-you-liked-it.jpg" data-background-size="65%"></section>
@@ -267,8 +261,10 @@ class HomeTests(TestCase):
         away the code and use the tests as a spec?
       </li>
     </ul>
-    <aside class="notes">
-      We'll revisit tests later.
+    <aside class="notes" data-markdown>
+Not only the tests as a spec, but the documentation, maybe even just the readme.
+
+We'll revisit tests later.
     </aside>
   </section>
 </section>
@@ -279,10 +275,20 @@ class HomeTests(TestCase):
   <p>If you're not touching something, it's getting worse</p>
   <p>If you don't have the manpower to continously touch all your code and documentation, that's a smell</p>
   <p>Improvement Kata - Mike Rother</p>
+  <aside class="notes">
+You may have also heard about the Toyota Kata
+  </aside>
+</section>
+
+<section id="dragons" data-background="images/dragons.gif" data-background-size="80%">
+  <p>Make each developer more effective</p>
+  <br><br><br>
+  <br><br><br>
+  <!-- https://soloswimmer.wordpress.com/2012/07/17/here-be-dragons/ -->
 </section>
 
 <section>
-  <section>
+  <section id="ci">
     <h2>Continous integration</h2>
     <blockquote>
       &ldquo;Any task you do at least once a month should take less time than it takes to get a cup of coffee&rdquo;
@@ -298,15 +304,14 @@ class HomeTests(TestCase):
     <small><sup>&dagger;</sup>Original: <a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">Any system that must be deployed more often than monthly does so faster than you can get a cup of coffee.</a></small>
     </p>
     <aside class="notes" data-markdown>
-      Having continous integration means you have a reproducible environment
-      so you're not allowed to say "it works for me" anymore.
+Maintaining a reproducible environment drastically reduces "it works for me".
 
-      Know what's better than having to do just one little step? Having to do zero.
+Know what's better than having to do just one little step? Having to do zero.
 
-      Tox has multidimentional stuff now that is great and lets you try the same
-      code on a matrix of Python and Django versions.
+Tox has multidimentional stuff now that is great and lets you try the same
+code on a matrix of Python and Django versions.
 
-      If you automate the routine things away, you get to do fun creative things.
+If you automate the routine things away, you get to do fun creative things.
     </aside>
   </section>
 
@@ -336,17 +341,14 @@ class HomeTests(TestCase):
       <li><code>import this</code></li>
     </ul>
     <aside class="notes" data-markdown>
-Always be iterating works best when you can touch all your code.
-
 Avoid magic and cleverness. I found that whenever I write clever code,
 I'll naturally refactor it to be dumber.
 
 oh, you just learned about __getattr__ and now you want to use it everywhere? Have fun trying to figure out why things randomly don’t work.
 
-the idea of keeping things simple isn’t to handicap yourself from using fancy
+The idea of keeping things simple isn’t to handicap yourself from using fancy
 language features, to avoid special snowflake patterns that are only used once
-and require more context to read. Are you writing something only you will
-understand?
+and require more context to read.
 
 Know your audience -- If you're doing scientific python, using Pandas to
 do a filter is fine. Importing pandas just to do a simple filter in a view
@@ -464,11 +466,8 @@ Don't be afraid of criticism. (teams? don't hire assholes?)
 
   <section>
     <h2>Boy scout rule</h2>
-    <p>
-    <q>Leave this world a little better than you found it.</q> &ndash; Robert Baden Powell
-    </p>
+    <p><q>Leave this world a little better than you found it.</q><br>&ndash; Robert Baden Powell</p>
     <p>If you have to touch a test to clean something, leave it alone for now.</p>
-
     <aside class="notes" data-markdown>
 Do a good turn daily?
 Be Prepared?
@@ -495,9 +494,9 @@ the pull request. if it does, make a ticket to clean it up.
 Code review is more than just checking syntax and style. See Ray H’s beyond
 pep-8 pycon 2015, which may be the most recommended video ever.
 
-REPEATABLE EXAMPLE: Last week (August 2015) I used a utility to make a request
-and it wasn't working, so I went back to the pull requests that added the
-feature and saw that I had a typo.
+REPEATABLE EXAMPLE: Last week (August 2015) I used a utility and it wasn't
+working, so I went back to the pull request and saw that I was using the
+utility the wrong way.
 
 DOCUMENTED EXAMPLE: If you're adding a new feature to the CMS, updating and
 communicating to users that there's a change is part of definition of done.
@@ -539,7 +538,7 @@ snowflake pattern, adding a Vary cookie to page that did not have one before.
 </section>
 
 
-<section id="pair" data-background="images/pair-programming.gif" data-background-size="20%" data-background-position="100% 55%">
+<section id="pair" data-background="images/pair-programming.gif" data-background-size="20%" data-background-position="98% 55%">
   <!-- http://translatorsanonymous.tumblr.com/post/123721193222/got-a-cat-tool-for-my-cat-tool-when-newbie -->
   <h2>Pair programming</h2>
   <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
@@ -562,7 +561,7 @@ PING PONG: async pair programming
 <section data-background="images/PowerRangers.jpg">
   <!-- captain planet? -->
   <!-- TMNT -->
-  <div class="text-shadowbox">
+  <div class="text-shadowbox dark">
     <h2>Teams</h2>
     <p>Guess what? Software teams are just like other teams.</p>
     <p>Hire coworkers you get along with.</p>
@@ -572,7 +571,7 @@ PING PONG: async pair programming
 avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
 
 what about if you’re alone? well, you just have to learn through experience.
-working with past self is a lot like workign with a terrible coworker.
+working with past self is a lot like working with a terrible coworker.
 
 When I interview now, I assume they passed technical test already. I ask
 cultural fit questions. What kind of ice cream do you like?
@@ -602,11 +601,11 @@ Work to stop the endless stream of small tasks that keep coming in.
       <li>The seeds of technical debt are sown upstream by product development</li>
       <li>Treat paying off technical debt as a feature</li>
       <li>
-        Write up concrete plans to reduce technical debt as actionable items with definitions of done
+        Write up concrete plans to reduce technical debt as actionable items with definitions of done:
         <ul>
+          <li><q>Upgrade Django to version 1.4.23</q></li>
+          <li><q>Change views in app <code>Y</code> to use new base view from app <code>X</code></q></li>
           <li><img src="images/emoji.png" alt="" style="background: none; border: none; height: 1em; margin: 0;"></li>
-          <li><q>Upgrade Django to version 1.8.3</q></li>
-          <li><q>Change views in app Y to use new base view from app X</q></li>
         </ul>
       </li>
     </ul>
@@ -646,23 +645,26 @@ A lot agile is just common sense.
     <p>Test</p>
     <p>Less boilerplate</p>
     <p>Great community</p>
+    <aside class="notes">
+As a framework, Django's got a good balance of opinion versus freedom.
+    </aside>
   </section>
 
   <section>
     <h2>Don't customize the Django admin</h2>
     <p>The admin is a developer interface, not a CMS</p>
     <p>Writing your own seems like it's more technical debt, but you'll end up with a better user experience</p>
-    <aside class="notes">
+    <aside class="notes" data-markdown>
 
-      Are writing Selenium tests for custom admin behavior? BEcause that's what
-      you have to do if you start customizing the admin. Lots of intersecting
-      code. If you need a custom interface, write it. Bits of the admin are
-      often re-usable outside the admin (permissions, require-login). Use third
-      party admin integrations that are maintained, don’t do it yourself. If
-      you write something that changes, are you going to read through every
-      Django release note? it turns out depended on some behavior that changed,
-      it’s going to be more expensive to discover it broke without CI and since
-      admin things tend to be hacky, more expensive to fix/maintain in general.
+Are you writing Selenium tests for custom admin behavior? Because that's what
+you have to do if you start customizing the admin. Lots of intersecting code.
+If you need a custom interface, write it. Bits of the admin are often re-usable
+outside the admin (permissions, require-login). Use third party admin
+integrations that are maintained, don’t do it yourself. If you write something
+that changes, are you going to read through every Django release note? since
+admin things tend to be hacky, more expensive to fix/maintain in general.
+
+Tight coupling to something you don't control.
 
     </aside>
   </section>
@@ -718,8 +720,27 @@ class ArticleManagerTests(TestCase):
        Factoryboy makes it so the attributes you specify are the ones that are relevant to the test.
     </aside>
   </section>
+
   <section>
-    shell_plus screenshot here
+    <h2>Unique names</h2>
+    <pre><code data-trim>
+$ ./manage.py shell_plus
+# Shell Plus Model Imports
+from django.contrib.admin.models import LogEntry
+from django.contrib.auth.models import Group, Permission, User
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.sessions.models import Session
+from tx_elevators.models import Building, Elevator
+# Shell Plus Django Imports
+from django.utils import timezone
+from django.conf import settings
+from django.core.cache import cache
+from django.db.models import Avg, Count, F, Max, Min, Sum, Q, Prefetch
+from django.core.urlresolvers import reverse
+from django.db import transaction
+>>> Elevator.objects.count()
+51952
+    </code></pre>
     <aside class="notes">
       Yes, shell plus gives you ways around this, but at the cost of more technical debt.
     </aside>
@@ -734,11 +755,16 @@ class ArticleManagerTests(TestCase):
       Do Use it! For integration tests
     </p>
 
-    :flow diagram here:
+    <pre><code class="nohighlight" style="text-align: center;">urls
+request middleware
+views (dispatch/get/get_context_data)
+response middleware
+context_processor</code></pre>
+
     <aside class="notes" data-markdown>
 
-      the test client touches the url router, middleware, context processor.
-      It’s useful if you’re testing routes, headers
+the test client touches the url router, middleware, context processor.
+It’s useful if you’re testing routes, headers, vary cookie.
 
     </aside>
   </section>
@@ -747,7 +773,15 @@ class ArticleManagerTests(TestCase):
     <h2>Avoid model inheritance</h2>
     <p>Mixins and Base classes</p>
     <p>Hurts readability and performance</p>
-    TODO insert diagram here
+    <p><img src="images/graphviz.png" alt="" style="height: 266px;"></p>
+    <!-- http://django.es/blog/crear-una-imagen-de-nuestros-modelos-con-django-command-extensions/ -->
+    <aside class="notes" data-markdown>
+
+Django Extensions has examples for what a good model mixin is:
+TimeStampedModel, TitleDescriptionModel, TitleSlugDescriptionModel
+
+django-extensions.readthedocs.org/en/latest/model_extensions.html
+    </aside>
   </section>
 
   <section id="fresh" data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
@@ -768,13 +802,15 @@ requirements and tells me when they break.
 </section>
 
 <section>
-  <section>
+  <section data-background="images/value-over-time.jpg" data-background-size="34%" data-background-position="50% 97%">
     <h2>Trading technical debt</h2>
-    <p>Freezing content (Taco Bell Future)</p>
-    <p>Deciding up front what you're optimizing for</p>
-    <p>Adding deliberate code smells</p>
-INSERT chart here
-    <aside class="notes">
+    <ul>
+      <li>Freezing content (Taco Bell Future)</li>
+      <li>Deciding up front what you're optimizing for</li>
+      <li>Adding deliberate code smells</li>
+    </ul>
+    <br><br><br><br><br><br>
+    <aside class="notes" data-markdown>
 Taco Bell future. At the Texas Tribune, we had big sections
 of the site that broke all the time when we didn’t expect it to. So we traded
 some caching and maintainability to get out out of our monolithic Django app.
@@ -783,15 +819,14 @@ Now we could work on new code without worrying if we would break things.
 For startups, getting first to market is probably more important than
 building quality.
 
-Technical debt is an engineering trade-off. Good Cheap Fast, pick two
-
 Making code hard to maintain on purpose.
     </aside>
   </section>
 
   <section data-background="images/goodcheapfast.png" data-background-size="40%">
     <aside class="notes">
-Be aware of what you’re optimizing for. Don’t spend a long time building something small sloppily.
+Technical debt is an engineering trade-off. Good Cheap Fast, pick two. You can
+also just pick one if you want to.
     </aside>
   </section>
 
@@ -822,7 +857,7 @@ Delivering value
 <section>
   <section>
     <h2>Reading</h2>
-    <li><a href="http://www.infoq.com/presentations/Simple-Made-Easy">Docker and DevOps</a> by Gene Kim, Dockercon ’14, 38m45s</li>
+    <li><a href="https://youtu.be/SaHbtEeu37M">Docker and DevOps</a> by Gene Kim, Dockercon ’14, 38m45s</li>
     <li>
       <a href="https://www.youtube.com/watch?v=URztqq1kiqI">Inheriting a Sloppy Codebase</a>
       by Casey Kinsey, 42m04s
@@ -832,27 +867,22 @@ Delivering value
     </li>
   </section>
 
-  <section>
+  <section id="reading">
     <h2>Reading (for real)</h2>
-    <li>
-    <a href="http://www.crccheck.com/blog/managing-technical-debt-in-django-projects/">My blog post</a>
-    </li>
-    <li>
-    <a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">A healthy platform checklist - ed can hack</a>
-    </li>
-    <li>
-    <a href="http://higherorderlogic.com/2010/07/bad-code-isnt-technical-debt-its-an-unhedged-call-option/">Bad code isn't Technical Debt, it's an unhedged Call Option</a>
-    </li>
-    <li>
-    <a href="http://bigeng.io/post/118399425343/why-the-way-we-look-at-technical-debt-is-wrong">The way we look at technical debt is wrong</a>
-    </li>
-    <li>
-    <a href="http://steveblank.com/2015/05/19/organizational-debt-is-like-technical-debt-but-worse/">Organizational Debt is like Technical debt – but worse</a>
-    </li>
-    <li>
-    <a href="http://martinfowler.com/bliki/TechnicalDebt.html">martinfowler / TechnicalDebt</a>
-    </li>
-    <li>The Phoenix Project</li>
+    <ul>
+      <li><a href="http://www.crccheck.com/blog/managing-technical-debt-in-django-projects/">My blog post</a></li>
+      <li><a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">A healthy platform checklist - ed can hack</a></li>
+      <li>
+      <a href="http://higherorderlogic.com/2010/07/bad-code-isnt-technical-debt-its-an-unhedged-call-option/">Bad code isn't Technical Debt, it's an unhedged Call Option</a>
+      </li>
+      <li>
+      <a href="http://bigeng.io/post/118399425343/why-the-way-we-look-at-technical-debt-is-wrong">The way we look at technical debt is wrong</a>
+      </li>
+      <li><a href="http://steveblank.com/2015/05/19/organizational-debt-is-like-technical-debt-but-worse/">Organizational Debt is like Technical debt – but worse</a></li>
+      <li><a href="http://martinfowler.com/bliki/TechnicalDebt.html">martinfowler / Technical Debt</a></li>
+      <li><a href="http://devops.com/2014/10/07/qa-gene-kim-technical-debt/">Q&amp;A: Gene Kim</a></li>
+      <li>The Phoenix Project</li>
+    </ul>
   </section>
   <section>
     <img data-src="images/phoenix-project2.jpg" alt="" height="500px" style="border: 0;">
@@ -889,17 +919,21 @@ Delivering value
     <li>Clean as you code</li>
     <li>Foster a good coding culture</li>
     <li>Everything must be repeatable</li>
+    <li>Plan ahead for the whole lifecycle</li>
   </ul>
 </section>
 
 <section>
   <section>
     <h1>Thanks!</h1>
-    <img data-src="images/sausage.png" alt="" style="border: 0; padding: 0.3em 0.7em 0.7em; border-radius: 2em; height: 150px;">
+    <img data-src="images/sausage.png" alt="" style="border: 0; padding: 0.3em 0.7em 0.7em; border-radius: 1em; height: 150px;">
     <p>
       <a href="https://github.com/crccheck/tech-debt-talk">github/crccheck/tech-debt-talk</a><br>
-      <a href="https://hub.docker.com/r/crccheck/tech-debt/">docker/crccheck/tech-debt</a><br>
+      <!-- <a href="https://hub.docker.com/r/crccheck/tech-debt/">docker/crccheck/tech-debt</a><br> -->
     </p>
+    <pre><code data-trim>
+docker run --rm -p 8000:1947 crccheck/tech-debt
+    </code></pre>
   </section>
   <section></section>
   <section id="taco" data-background="images/taco.jpg"></section>
