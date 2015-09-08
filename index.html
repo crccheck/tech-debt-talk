@@ -74,6 +74,10 @@
   </div>
   <aside class="notes" data-markdown>
 I’ve been using Django since version 1.2? My 4th DjangoCon.
+
+I've only been a professional software developer for 6 years this is what I've
+seen and these are the practical things I've seen to help combat technical
+debt.
 </aside>
 </section>
 
@@ -95,15 +99,11 @@ I’ve been using Django since version 1.2? My 4th DjangoCon.
       <li>Every line of code is technical debt</li>
     </ul>
     <aside class="notes" data-markdown>
-Everyone starts their talks with dictionary definitions. There’s dictionary definitions of technical debt
+Technical debt is what you feel the next time you want to make a change - Gene Kim
 
 EVERY LINE: Every line was written for a reason, you have to know why
 
-I've only been a professional software developer for 6 years this is what I've
-seen and these are the practical things I've seen to help combat technical
-debt.
-
-No definition in Urban Dictionary
+NEXT: No definition in Urban Dictionary
     </aside>
   </section>
 
@@ -151,9 +151,10 @@ with these again :niran-laugh:
     <aside class="notes" data-markdown>
 Frustration levels are high because you never deliver, never move forward
 
-Django lets you build things very quickly. So developers will start off loving Django. But if you build without regard to technical debt, you stop being able to deliver. Django turns into a nightmare and now Django becomes the scapegoat for your organization.
-
-technical debt is what you feel the next time you want to make a change - Gene Kim
+Django lets you build things very quickly. So developers will start off loving
+Django. But if you build without regard to technical debt, you stop being able
+to deliver. Django turns into a nightmare and now Django becomes the scapegoat
+for your organization.
     </aside>
   </section>
 
@@ -229,7 +230,6 @@ def zipcode(s):
     <pre><code class="lang-python" data-trim>
 from django.test import TestCase
 
-
 class HomeTests(TestCase):
     def test_homepage_loads(self):
         self.client.get('/')
@@ -237,7 +237,7 @@ class HomeTests(TestCase):
     <p><small><a href="http://blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/" target="_blank">blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/</a></small>
     </p>
     <aside class="notes">
-NEXT SLIDE: oh yeah, one more thing. if you’re not sure if you should write a test, then...
+NEXT: oh yeah, one more thing. if you’re not sure if you should write a test, then...
     </aside>
   </section>
 
@@ -344,7 +344,8 @@ If you automate the routine things away, you get to do fun creative things.
 Avoid magic and cleverness. I found that whenever I write clever code,
 I'll naturally refactor it to be dumber.
 
-oh, you just learned about __getattr__ and now you want to use it everywhere? Have fun trying to figure out why things randomly don’t work.
+oh, you just learned about __getattr__ and now you want to use it everywhere?
+Have fun trying to figure out why things randomly don’t work.
 
 The idea of keeping things simple isn’t to handicap yourself from using fancy
 language features, to avoid special snowflake patterns that are only used once
@@ -454,14 +455,13 @@ diff at a higher level will give you a new perspective.
     <p>The rule is: one pull request = one change</p>
     <p><img src="images/corgi-horse.jpg" alt="" height=230></p>
     <aside class="notes" data-markdown>
-      smaller pull requests = faster reviews and you can move on.
-      bike shedding
-      tighter feedback loops
+smaller pull requests = faster reviews and you can move on.
+bike shedding
+tighter feedback loops
 
 THE RULE IS: You should break this rule. Well, bend. If you see something while
 writing code, you should fix it as long as it doesn’t hurt the readability of
 the pull request. if it does, make a ticket to clean it up.
-
     </aside>
   </section>
 
@@ -472,7 +472,6 @@ the pull request. if it does, make a ticket to clean it up.
     <aside class="notes" data-markdown>
 Do a good turn daily?
 Be Prepared?
-
     </aside>
   </section>
 
@@ -510,15 +509,11 @@ but during code review, you decide to use a jquery one-liner.
     <aside class="notes" data-markdown>
 Depends on your organization
 
-It's more than just stating what the LOC change is, it’s more about documenting
-how much this feature costs. Do you have the ability to pay the debt you’re
-about to create? And if a pull request says it comes with a lot of technical
-debt, you’ll be able to plan ahead better. Making sure everyone is cognizant of
-the debt being made. Note for code reviewers for if just one small thing is
-especially smelly so they can pay special attention to it.
+It's more than just stating what the LOC change is. Making sure everyone is
+cognizant of the debt being made.
 
-concrete example: nodejs proxy, well now we need node knowledge. Adding a
-snowflake pattern, adding a Vary cookie to page that did not have one before.
+concrete examples of hidden technical debt: Adding a snowflake pattern, adding
+a Vary cookie to page that did not have one before.
 
 > decreases because of deletions, looser coupling between this and higher ed,
 > and modernized higher ed to work with newer django
@@ -678,7 +673,7 @@ Tight coupling to something you don't control.
       <h2>Clean as you cook</h2>
       <p>Delete code! That's what source control is for.</p>
       <p>If you think you'll need to toggle something, don't use comments, use a feature switch.</p>
-      Open tickets for things you find. See boy scout rule
+      Open tickets for things you find (see boy scout rule)
     </div>
   </section>
 
@@ -692,6 +687,9 @@ Tight coupling to something you don't control.
       Wed 11:50 am
     <a href="https://2015.djangocon.us/schedule/presentation/48/">The Other Hard Problem: Lessons and Advice on Naming Things</a>
     Jacob Burch
+    </aside>
+    <aside class="notes">
+GREPPABLE EXPLAIN
     </aside>
   </section>
 
@@ -738,30 +736,22 @@ from django.db import transaction
 51952
     </code></pre>
     <aside class="notes">
-      Yes, shell plus gives you ways around this, but at the cost of more technical debt.
+Yes, shell plus gives you ways around this, but at the cost of more technical debt.
     </aside>
   </section>
 
   <section>
     <h2>Avoid the test client</h2>
-    <p>
-      Don’t use it! For unit tests.
-    </p>
-    <p>
-      Do Use it! For integration tests
-    </p>
-
+    <p>Don’t use it! For unit tests.</p>
+    <p>Do Use it! For integration tests</p>
     <pre><code class="nohighlight" style="text-align: center;">urls
 request middleware
 views (dispatch/get/get_context_data)
 response middleware
 context_processor</code></pre>
-
     <aside class="notes" data-markdown>
-
 the test client touches the url router, middleware, context processor.
 It’s useful if you’re testing routes, headers, vary cookie.
-
     </aside>
   </section>
 
