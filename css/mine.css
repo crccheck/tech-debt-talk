@@ -33,15 +33,11 @@ q:after {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-.side-img {
-  float: right;
-  margin-bottom: 1em !important;
-  margin-left: 1em !important;
-  max-width: 40%;
-}
-
-.side-img img {
-  border: 0 !important;
+.reveal .inline-img {
+  background: none;
+  border: none;
+  box-shadow: none;
+  margin: 0;
 }
 
 .reveal sup {
