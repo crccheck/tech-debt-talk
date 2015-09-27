@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Managing Technical Debt - Chris Chang - DjangoCon US '15</title>
+    <title>Managing Technical Debt - Chris Chang - PyTexas '15</title>
 
-    <meta name="description" content="Managing Technical Debt, DjangoCon US 2015">
+    <meta name="description" content="Managing Technical Debt">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -88,7 +88,7 @@ debt.
       <li>
         <blockquote cite="https://en.wikipedia.org/wiki/Technical_debt">
           [Technical debt] can be thought of as work that needs to be done before a particular job can be considered complete or proper.
-            <sup style="white-space:nowrap;" class="noprint Inline-Template Template-Fact">[<i><strong class="selflink"><span title="Wikipedia:Citation needed">citation needed</span></strong></i>]</sup>
+          <sup style="white-space:nowrap;" class="noprint Inline-Template Template-Fact">[<i><strong class="selflink"><span title="Wikipedia:Citation needed">citation needed</span></strong></i>]</sup>
         </blockquote>
       </li>
       <li>
@@ -180,10 +180,8 @@ for your organization.
     <br><br><br>
     <!-- <iframe src="http://gfycat.com/ifr/FrailImpishAnnashummingbird" frameborder="0" scrolling="no" width="413" height="392" style="-webkit-backface-visibility: hidden;-webkit-transform: scale(1);" ></iframe> -->
     <aside class="notes" data-markdown>
-There’s three other sessions about testing.
-
 Do it! Just do it! Don't let your dreams be dreams. Yesterday, you said
-tomorrow. So just do it! Make your dreams come true! Just do it!
+you would write tests tomorrow. So just do it! Make your dreams come true! Just do it!
     </aside>
   </section>
 
@@ -271,10 +269,13 @@ We'll revisit tests later.
 
 <section data-background="images/bitrot.jpg" data-background-position="98% 55%" data-background-size="25%">
   <h2>Bitrot / Software entropy</h2>
-  <div style="float: right; width: 27%; height: 400px;">&nbsp;</div>
+  <div style="float: right; width: 27%; height: 350px;">&nbsp;</div>
   <p>If you're not touching something, it's getting worse</p>
   <p>If you don't have the manpower to continously touch all your code and documentation, that's a smell</p>
   <p>Improvement Kata - Mike Rother</p>
+  <blockquote cite="http://reaktor.com/blog/applications-age-like-fish-data-ages-like-wine/">
+    Applications age like fish, data ages like wine
+  </blockquote>
   <aside class="notes">
 You may have also heard about the Toyota Kata
   </aside>
@@ -549,13 +550,13 @@ PING PONG: async pair programming
 </section>
 
 
-<section data-background="images/PowerRangers.jpg">
+<section id="teams" data-background="images/PowerRangers.jpg">
   <!-- captain planet? -->
   <!-- TMNT -->
   <div class="text-shadowbox dark">
     <h2>Teams</h2>
-    <p>Guess what? Software teams are just like other teams.</p>
-    <p>Hire coworkers you get along with.</p>
+    <p>Guess what? Software teams are just like other teams</p>
+    <p>Hire coworkers that share your same goal (caring about improving processes)</p>
     <p><q>Past you is the worst coworker ever</q></p>
   </div>
   <aside class="notes" data-markdown>
@@ -565,7 +566,7 @@ what about if you’re alone? well, you just have to learn through experience.
 working with past self is a lot like working with a terrible coworker.
 
 When I interview now, I assume they passed technical test already. I ask
-cultural fit questions. What kind of ice cream do you like?
+cultural fit questions.
 
   </aside>
 </section>
@@ -596,7 +597,7 @@ Work to stop the endless stream of small tasks that keep coming in.
         <ul>
           <li><q>Upgrade Django to version 1.4.23</q></li>
           <li><q>Change views in app <code>Y</code> to use new base view from app <code>X</code></q></li>
-          <li><img src="images/emoji.png" alt="" style="background: none; border: none; height: 1em; margin: 0;"></li>
+          <li><img class="inline-img" src="images/emoji.png" alt="" style="height: 1em;"></li>
         </ul>
       </li>
     </ul>
@@ -612,6 +613,65 @@ table flip to indicate how serious the problem is, how embarassing it is, and
 how hard it is to fix.
 
 If everything is on fire all the time, that’s a bad time to plant a tree.
+    </aside>
+  </section>
+  <section id="table">
+    <table style="font-size: 0.7em;">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th><img class="inline-img" src="images/fire.png" alt="" style="height: 1em;"></th>
+          <th><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></th>
+          <th><img class="inline-img" src="images/table.png" alt="" style="height: 1em;"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Reduce homepage query count</td>
+            <td>
+              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+            </td>
+            <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
+            <td>┬──┬</td>
+        </tr>
+        <tr>
+          <td>Fix inconsistent migrations</td>
+            <td><img class="inline-img" src="images/fire.png" alt="" style="height: 1em;"></td>
+            <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
+            <td>┬───┬</td>
+        </tr>
+        <tr>
+          <td>Add CSRF</td>
+          <td><img class="inline-img" src="images/fire.png" alt="" style="height: 1em;"></td>
+          <td>
+            <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+            <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+            <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+            <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+          </td>
+          <td>┬─┬</td>
+        </tr>
+        <tr>
+          <td>Refactor Polls views to CBV</td>
+          <td></td>
+          <td></td>
+          <td>┬─┬</td>
+        </tr>
+        <tr>
+          <td>Upgrade from Django 1.5 to 1.8</td>
+          <td></td>
+          <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
+          <td>┬─────┬</td>
+        </tr>
+      </tbody>
+    </table>
+    <aside class="notes" data-markdown>
+      Writing down your technical debt can be cathartic.
+
+      And look here, here's some low hanging fruit.
     </aside>
   </section>
 </section>
@@ -805,7 +865,10 @@ Now we could work on new code without worrying if we would break things.
 For startups, getting first to market is probably more important than
 building quality.
 
-Making code hard to maintain on purpose.
+Focus on good interfaces where you can throw away code that fulfills those
+interfaces. (remember throw away code, keep the tests?)
+
+Making code hard to maintain on purpose as a reminder that it should not be touched.
     </aside>
   </section>
 
@@ -834,14 +897,16 @@ Just remember: when was the last time a proof of concept was put into production
 
 Refactor vs throw away (prototype) MVP
 The specs and docs are more important than the code
+If you're suffering from bitrot, choose which pieces you care about. It's better
+to have solid pieces (your interface/api is still good, right?)
 
-Delivering value
+Delivering value; don't let perfect be the enemy of good enough.
     </aside>
   </section>
 </section>
 
 <section>
-  <section>
+  <section id="videos">
     <h2>Reading</h2>
     <li><a href="https://youtu.be/SaHbtEeu37M">Docker and DevOps</a> by Gene Kim, Dockercon ’14, 38m45s</li>
     <li>
@@ -850,6 +915,9 @@ Delivering value
     </li>
     <li>
       <a href="http://www.infoq.com/presentations/Simple-Made-Easy">Simple Made Easy</a> by Rich Hickey, 61m26s
+    </li>
+    <li>
+      <a href="https://youtu.be/PJjmw9TRB7s">Implementing a Strong Code-Review Culture</a> 37m48s
     </li>
   </section>
 
@@ -922,6 +990,7 @@ docker run --rm -p 8000:1947 crccheck/tech-debt
     </code></pre>
   </section>
   <section></section>
+  <section id="cables" data-background="images/badcable16.jpg"></section>
   <section id="taco" data-background="images/taco.jpg"></section>
   <section id="derp" data-background="images/derp.jpg"></section>
   <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
