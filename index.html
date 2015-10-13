@@ -82,25 +82,26 @@ debt.
 </section>
 
 <section class="slide">
-  <section>
+  <section data-background="images/badcable16.jpg">
+  <div class="text-shadowbox dark">
     <h2>What is technical debt?</h2>
     <ul>
       <li>
-        <blockquote cite="https://en.wikipedia.org/wiki/Technical_debt">
+        <!-- <blockquote cite="https://en.wikipedia.org/wiki/Technical_debt"> -->
           [Technical debt] can be thought of as work that needs to be done before a particular job can be considered complete or proper.
           <sup style="white-space:nowrap;" class="noprint Inline-Template Template-Fact">[<i><strong class="selflink"><span title="Wikipedia:Citation needed">citation needed</span></strong></i>]</sup>
-        </blockquote>
+        <!-- </blockquote> -->
       </li>
       <li>
-        <blockquote cite="The Phoenix Project, page 196">
-          Left unchecked, technical debt will ensure that the only work that gets done is unplanned work!
-        </blockquote>
+        Gene Kim:
+        <!-- <blockquote cite="The Phoenix Project, page 196"> -->
+        <q>Left unchecked, technical debt will ensure that the only work that gets done is unplanned work!</q><br>
+        <q>Technical debt is what you feel the next time you want to make a change</q>
       </li>
       <li>Every line of code is technical debt</li>
     </ul>
+  </div>
     <aside class="notes" data-markdown>
-Technical debt is what you feel the next time you want to make a change - Gene Kim
-
 EVERY LINE: Every line was written for a reason, you have to know why
 
 NEXT: No definition in Urban Dictionary
@@ -990,7 +991,6 @@ docker run --rm -p 8000:1947 crccheck/tech-debt
     </code></pre>
   </section>
   <section></section>
-  <section id="cables" data-background="images/badcable16.jpg"></section>
   <section id="taco" data-background="images/taco.jpg"></section>
   <section id="derp" data-background="images/derp.jpg"></section>
   <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
