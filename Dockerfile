@@ -1,8 +1,8 @@
-FROM ubuntu:14.04
+FROM node:4
 
 RUN apt-get -qq update && \
       DEBIAN_FRONTEND=noninteractive apt-get -y install \
-      python2.7 nodejs nodejs-legacy npm \
+      python2.7 \
       > /dev/null && \
       apt-get clean && rm -rf /var/lib/apt/lists/*
 
