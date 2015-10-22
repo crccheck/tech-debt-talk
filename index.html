@@ -412,11 +412,13 @@ accounts = [x.instagram for x in friends]
 <section id="map" data-background="images/tamriel.jpg"></section>
 
 <section id="dragons" data-background="images/dragons.gif" data-background-size="80%">
-  <p>Make each developer more effective</p>
+  <p></p>
   <br><br><br>
   <br><br><br>
   <!-- https://soloswimmer.wordpress.com/2012/07/17/here-be-dragons/ -->
 </section>
+
+<section id="twisted" data-background="images/twisted.jpg"></section>
 
 <section>
   <h2>Related topics</h2>
@@ -570,7 +572,7 @@ PING PONG: async pair programming
   <div class="text-shadowbox dark">
     <h2>Teams</h2>
     <p>Guess what? Software teams are just like other teams</p>
-    <p>Hire coworkers that share your same goal (caring about improving processes)</p>
+    <p>Hire coworkers that care about controlling technical debt</p>
     <p><q>Past you is the worst coworker ever</q></p>
   </div>
   <aside class="notes" data-markdown>
@@ -586,54 +588,32 @@ cultural fit questions.
 </section>
 
 <section>
-  <section data-background="images/corgi-beach.jpg" data-background-position="98% 98%" data-background-size="25%">
+  <section>
     <h2>Culture</h2>
     <ul>
       <li>Work to get faster feedback loops</li>
-      <li>Learn how to say "NO"</li>
-      <li>Embrace failure</li>
-      <li>Make yourself obsolete. Work like you're training your replacement</li>
-      <li>Go on vacation without your laptop</li>
+      <li>Embrace failure (high trust)</li>
+      <li>Make yourself obsolete; pretend you're training your replacement</li>
+      <li>
+      The seeds of technical debt are sown upstream by product development,
+      learn how to say &ldquo;NO&rdquo;</li>
+      <li>Treat paying off technical debt as a feature</li>
     </ul>
-    <br><br>
     <aside class="notes" data-markdown>
 Examples of faster feedback loops:
 * sprints
 * CI/CD
 * code review
+
+Go on vacation without your laptop
+
 Work to stop the endless stream of small tasks that keep coming in.
     </aside>
   </section>
-
-  <section>
-    <ul>
-      <li>Admit that technical debt is a problem</li>
-      <li>The seeds of technical debt are sown upstream by product development</li>
-      <li>Treat paying off technical debt as a feature</li>
-      <li>
-        Write up concrete plans to reduce technical debt as actionable items with definitions of done:
-        <ul>
-          <li><q>Upgrade Django to version 1.4.23</q></li>
-          <li><q>Change views in app <code>Y</code> to use new base view from app <code>X</code></q></li>
-          <li><img class="inline-img" src="images/emoji.png" alt="" style="height: 1em;"></li>
-        </ul>
-      </li>
-    </ul>
-    <aside class="notes" data-markdown>
-
-It's hard to communicate to the business side that adding what seems like a
-simple feature is actually difficult (especially if you used to be fast;
-thanks, technical debt!) perhaps you've deployed a lot of prototype and WIP
-code. And it's hard to justify taking time to do a task that isn't a feature.
-
-I like making lists of technical debt with rankings. I use :fire: :poop: and
-table flip to indicate how serious the problem is, how embarassing it is, and
-how hard it is to fix.
-
-If everything is on fire all the time, that’s a bad time to plant a tree.
-    </aside>
-  </section>
   <section id="table">
+    <p>
+      Write up concrete plans to reduce technical debt as actionable items
+    </p>
     <table style="font-size: 0.7em;">
       <thead>
         <tr>
@@ -694,20 +674,6 @@ If everything is on fire all the time, that’s a bad time to plant a tree.
   </section>
 </section>
 
-<section id="agile" data-background="images/corgi-go-round.gif">
-  <div class="text-shadowbox dark">
-    <h2>Agile</h2>
-    <p>Always be iterating the process.</p>
-  </div>
-  <aside class="notes" data-markdown>
-
-Despite what you think about Agile, and what you can actually implement, you
-can take the pieces you like
-
-A lot agile is just common sense.
-  </aside>
-</section>
-
 <section>
   <section>
     <h2>Django is great</h2>
@@ -720,7 +686,7 @@ As a framework, Django's got a good balance of opinion versus freedom.
   </section>
 
   <section>
-    <h2>Don't customize the Django admin</h2>
+    <h2>Don't customize the Admin</h2>
     <p>The admin is a developer interface, not a CMS</p>
     <p>Writing your own seems like it's more technical debt, but you'll end up with a better user experience</p>
     <aside class="notes" data-markdown>
