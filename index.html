@@ -406,6 +406,10 @@ accounts = [x.instagram for x in friends]
         <td align=center>Unicorns</td>
       </tr>
     </table>
+    <p class="fragment">Make yourself obsolete<br>Pretend you're training your replacement</p>
+    <aside class="notes" data-markdown>
+avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
+    </aside>
   </section>
 </section>
 
@@ -576,40 +580,36 @@ PING PONG: async pair programming
     <p><q>Past you is the worst coworker ever</q></p>
   </div>
   <aside class="notes" data-markdown>
-avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
-
 what about if you’re alone? well, you just have to learn through experience.
 working with past self is a lot like working with a terrible coworker.
 
 When I interview now, I assume they passed technical test already. I ask
 cultural fit questions.
-
   </aside>
 </section>
 
 <section>
   <section>
     <h2>Culture</h2>
+    <p>Get faster feedback loops</p>
     <ul>
-      <li>Work to get faster feedback loops</li>
-      <li>Embrace failure (high trust)</li>
-      <li>Make yourself obsolete; pretend you're training your replacement</li>
-      <li>
-      The seeds of technical debt are sown upstream by product development,
-      learn how to say &ldquo;NO&rdquo;</li>
-      <li>Treat paying off technical debt as a feature</li>
+      <li>Sprints</li>
+      <li>Code review</li>
+      <li>Always be automating</li>
+      <li>CI/CD</li>
+      <li>Reduce friction</li>
+      <li>Release early, release often</li>
     </ul>
-    <aside class="notes" data-markdown>
-Examples of faster feedback loops:
-* sprints
-* CI/CD
-* code review
-
-Go on vacation without your laptop
-
-Work to stop the endless stream of small tasks that keep coming in.
-    </aside>
   </section>
+
+  <section>
+    <h2>Culture</h2>
+    <p>Embrace failure (high trust)</p>
+    <p>Kill babies</p>
+    <p>Learn how to say &ldquo;NO&rdquo;</p>
+    <p><img class="inline-img" src="images/lucy-factory.gif" alt=""></p>
+  </section>
+
   <section id="table">
     <p>
       Write up concrete plans to reduce technical debt as actionable items
@@ -689,8 +689,8 @@ As a framework, Django's got a good balance of opinion versus freedom.
     <h2>Don't customize the Admin</h2>
     <p>The admin is a developer interface, not a CMS</p>
     <p>Writing your own seems like it's more technical debt, but you'll end up with a better user experience</p>
+    <p>Admin customizations == tight coupling</p>
     <aside class="notes" data-markdown>
-
 Are you writing Selenium tests for custom admin behavior? Because that's what
 you have to do if you start customizing the admin. Lots of intersecting code.
 If you need a custom interface, write it. Bits of the admin are often re-usable
@@ -698,9 +698,6 @@ outside the admin (permissions, require-login). Use third party admin
 integrations that are maintained, don’t do it yourself. If you write something
 that changes, are you going to read through every Django release note? since
 admin things tend to be hacky, more expensive to fix/maintain in general.
-
-Tight coupling to something you don't control.
-
     </aside>
   </section>
 
@@ -725,16 +722,8 @@ Tight coupling to something you don't control.
     <h2>Naming things</h2>
     <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
     <p>Is it greppable?</p>
-    <p>Use unique app and model names</p>
+    <p>Find/Replace friendly?</p>
     <p>Name variables (especially in tests) so they read like English</p>
-    <aside class="notes" data-markdown>
-      Wed 11:50 am
-    <a href="https://2015.djangocon.us/schedule/presentation/48/">The Other Hard Problem: Lessons and Advice on Naming Things</a>
-    Jacob Burch
-    </aside>
-    <aside class="notes">
-GREPPABLE EXPLAIN
-    </aside>
   </section>
 
   <section>
@@ -760,7 +749,7 @@ class ArticleManagerTests(TestCase):
   </section>
 
   <section>
-    <h2>Unique names</h2>
+    <h2>Use unique names</h2>
     <pre><code data-trim>
 $ ./manage.py shell_plus
 # Shell Plus Model Imports
@@ -917,7 +906,7 @@ Delivering value; don't let perfect be the enemy of good enough.
 
   <section id="reading">
     <h2>Reading (for real)</h2>
-    <ul>
+    <ul style="font-size: 0.75em;">
       <li><a href="http://www.crccheck.com/blog/managing-technical-debt-in-django-projects/">My blog post</a></li>
       <li><a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">A healthy platform checklist - ed can hack</a></li>
       <li>
@@ -929,6 +918,7 @@ Delivering value; don't let perfect be the enemy of good enough.
       <li><a href="http://steveblank.com/2015/05/19/organizational-debt-is-like-technical-debt-but-worse/">Organizational Debt is like Technical debt – but worse</a></li>
       <li><a href="http://martinfowler.com/bliki/TechnicalDebt.html">martinfowler / Technical Debt</a></li>
       <li><a href="http://devops.com/2014/10/07/qa-gene-kim-technical-debt/">Q&amp;A: Gene Kim</a></li>
+      <li><a href="https://sites.google.com/site/unclebobconsultingllc/a-mess-is-not-a-technical-debt">A mess is not technical debt</a></li>
       <li>The Phoenix Project</li>
     </ul>
   </section>
