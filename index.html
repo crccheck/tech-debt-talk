@@ -278,7 +278,7 @@ You may have also heard about the Toyota Kata
 
 <section>
   <section id="ci">
-    <h2>Continous integration</h2>
+    <h2>Automation</h2>
     <blockquote>
       &ldquo;Any task you do at least once a month should take less time than it takes to get a cup of coffee&rdquo;
       <sup>&dagger;</sup>
@@ -287,6 +287,7 @@ You may have also heard about the Toyota Kata
       <li>Jenkins</li>
       <li>TravisCI</li>
       <li>Tox</li>
+      <li>Make &amp; shell scripts</li>
       <li><a href="http://docs.python-guide.org/en/latest/scenarios/ci/">docs.python-guide.org/en/latest/scenarios/ci/</a></li>
     </ul>
     <p>
@@ -325,6 +326,7 @@ If you automate the routine things away, you get to do fun creative things.
     <ul>
       <li>Practice makes perfect. Always be iterating.</li>
       <li>Keep things simple. Code that requires less context to understand is more readable.</li>
+      <li>Keep things short. Every LOC is debt.</li>
       <li>Know your audience.</li>
       <li>Choose readability over performance.</li>
       <li><code>import this</code></li>
@@ -406,7 +408,13 @@ accounts = [x.instagram for x in friends]
         <td align=center>Unicorns</td>
       </tr>
     </table>
-    <p class="fragment">Make yourself obsolete<br>Pretend you're training your replacement</p>
+  </section>
+
+  <section>
+    <h2>Avoiding code silos</h2>
+    <p>Make yourself obsolete</p>
+    <p>Pretend you're training your replacement</p>
+    <p>Could you go on vacation without your laptop?</p>
     <aside class="notes" data-markdown>
 avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
     </aside>
@@ -456,13 +464,14 @@ Coding under pressure
   </section>
 
   <section>
+    <h2>No one to review your code?</h2>
     <p>Sleep on it</p>
     <p>Practice with others on open source projects</p>
     <blockquote cite="Proverbs 27:17">
     As iron sharpens iron, so one person sharpens another.
     </blockquote>
     <aside class="notes" data-markdown>
-Small team? working alone? Sleep on it. Open pull requests anyways. Seeing your
+Open pull requests anyways. Seeing your
 diff at a higher level will give you a new perspective.
     </aside>
   </section>
@@ -472,10 +481,10 @@ diff at a higher level will give you a new perspective.
   <section>
     <h2>Pull requests</h2>
     <p>The rule is: one pull request = one change</p>
-    <p><img src="images/corgi-horse.jpg" alt="" height=230></p>
+    <p><img class="inline-img" src="images/corgi-horse.jpg" alt="" height=250></p>
     <aside class="notes" data-markdown>
 smaller pull requests = faster reviews and you can move on.
-bike shedding
+Watch out for bike shedding
 tighter feedback loops
 
 THE RULE IS: You should break this rule. Well, bend. If you see something while
@@ -559,7 +568,7 @@ a Vary cookie to page that did not have one before.
   <ul>
     <li>tmux + vim</li>
     <li>Driver + Navigator</li>
-    <li>Ping pong pair programming</li>
+    <li>Pair <br>Programming <br>Ping <br>Pong <br>Pattern</li>
   </ul>
   <aside class="notes" data-markdown>
 this costs the most time, but has a excellent long term benefits. Code review
@@ -576,7 +585,8 @@ PING PONG: async pair programming
   <div class="text-shadowbox dark">
     <h2>Teams</h2>
     <p>Guess what? Software teams are just like other teams</p>
-    <p>Hire coworkers that care about controlling technical debt</p>
+    <p>The team should care about controlling technical debt</p>
+    <p>Robots can help</p>
     <p><q>Past you is the worst coworker ever</q></p>
   </div>
   <aside class="notes" data-markdown>
@@ -595,10 +605,10 @@ cultural fit questions.
     <ul>
       <li>Sprints</li>
       <li>Code review</li>
-      <li>Always be automating</li>
       <li>CI/CD</li>
       <li>Reduce friction</li>
       <li>Release early, release often</li>
+      <li>Use analytics</li>
     </ul>
   </section>
 
@@ -716,6 +726,7 @@ also just pick one if you want to.
       <li>Froze content with <code>wget</code></li>
       <li>Old stuff still worked and looked the same</li>
       <li>Deleted <em>all the things</em></li>
+      <li>New stuff was easy to write</li>
     </ul>
     <!-- <p><small><a href="https://github.com/datadesk/django-bakery">Django-Bakery</a></small></p> -->
   </section>
@@ -915,11 +926,10 @@ requirements and tells me when they break.
     <img class="fragment" data-src="images/phoenix-project.jpg" alt="" height="500px" style="border: 0;">
   </section>
 
-  <section data-background="images/bartkira-mutation.png" data-background-position="50% 100%" data-background-size="40%">
+  <section data-background="images/bartkira-mutation.png" data-background-position="50% 100%" data-background-size="55%">
     <h2>Similar discussions</h2>
     <ul>
       <li>Microservices vs Monoliths</li>
-      <li>Single responsibility principle</li>
       <li>Not invented here syndrome</li>
       <li>Feature creep</li>
       <li>Insert product development buzzword here <a href="http://projects.wsj.com/buzzwords2014/">*</a></li>
