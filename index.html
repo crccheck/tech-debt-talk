@@ -589,7 +589,7 @@ cultural fit questions.
 </section>
 
 <section>
-  <section>
+  <section id="culture">
     <h2>Culture</h2>
     <p>Get faster feedback loops</p>
     <ul>
@@ -675,14 +675,79 @@ cultural fit questions.
 </section>
 
 <section>
+  <section data-background="images/value-over-time.jpg" data-background-size="34%" data-background-position="50% 97%">
+    <h2>Trading technical debt</h2>
+    <ul>
+      <li>Freezing content (Taco Bell Future)</li>
+      <li>Deciding up front what you're optimizing for</li>
+      <li>Adding deliberate code smells</li>
+    </ul>
+    <br><br><br><br><br><br>
+    <aside class="notes" data-markdown>
+Taco Bell future. At the Texas Tribune, we had big sections
+of the site that broke all the time when we didn’t expect it to. So we traded
+some caching and maintainability to get out out of our monolithic Django app.
+Now we could work on new code without worrying if we would break things.
+
+For startups, getting first to market is probably more important than
+building quality.
+
+Focus on good interfaces where you can throw away code that fulfills those
+interfaces. (remember throw away code, keep the tests?)
+
+Making code hard to maintain on purpose as a reminder that it should not be touched.
+    </aside>
+  </section>
+
+  <section id="tweetwire" data-background="images/tweetwire.jpg">
+    <h2>The TweetWire</h2>
+    <p>PHP</p>
+    <p>Django Models</p>
+    <p>Cron Job</p>
+    <p>Streaming Client</p>
+    <p>No Admin</p>
+    <p><code>&lt;a class="twitter-timeline" /&gt;</code></p>
+  </section>
+
+  <section data-background="images/goodcheapfast.png" data-background-size="40%">
+    <aside class="notes">
+Technical debt is an engineering trade-off. Good Cheap Fast, pick two. You can
+also just pick one if you want to.
+    </aside>
+  </section>
+
+  <section>
+    <h2>The exceptions</h2>
+    <p>
+      My general rule is if you can do everything in one screen of code, you write as crappy as you want.
+    </p>
+    <p>
+      If you're writing throw away code, it should truly be disposable.
+    </p>
+
+    <aside class="notes" data-markdown>
+
+In fact, it should be crappy. Introduce code smells on purpose. If you have
+beautiful well tested code that was terrible. Premature optimization
+
+Just remember: when was the last time a proof of concept was put into production? (EVERY TIME)
+
+Refactor vs throw away (prototype) MVP
+The specs and docs are more important than the code
+If you're suffering from bitrot, choose which pieces you care about. It's better
+to have solid pieces (your interface/api is still good, right?)
+
+Delivering value; don't let perfect be the enemy of good enough.
+    </aside>
+  </section>
+</section>
+
+<section>
   <section>
     <h2>Django is great</h2>
-    <p>Test</p>
+    <p>Writing tests is easy</p>
     <p>Less boilerplate</p>
     <p>Great community</p>
-    <aside class="notes">
-As a framework, Django's got a good balance of opinion versus freedom.
-    </aside>
   </section>
 
   <section>
@@ -783,7 +848,6 @@ views (dispatch/get/get_context_data)
 response middleware
 context_processor</code></pre>
     <aside class="notes" data-markdown>
-the test client touches the url router, middleware, context processor.
 It’s useful if you’re testing routes, headers, vary cookie.
     </aside>
   </section>
@@ -816,74 +880,6 @@ $ npm outdated
     <aside class="notes" data-markdown>
 Something I've always wanted to try is a Jenkins job that checks for updated
 requirements and tells me when they break.
-    </aside>
-  </section>
-</section>
-
-<section>
-  <section data-background="images/value-over-time.jpg" data-background-size="34%" data-background-position="50% 97%">
-    <h2>Trading technical debt</h2>
-    <ul>
-      <li>Freezing content (Taco Bell Future)</li>
-      <li>Deciding up front what you're optimizing for</li>
-      <li>Adding deliberate code smells</li>
-    </ul>
-    <br><br><br><br><br><br>
-    <aside class="notes" data-markdown>
-Taco Bell future. At the Texas Tribune, we had big sections
-of the site that broke all the time when we didn’t expect it to. So we traded
-some caching and maintainability to get out out of our monolithic Django app.
-Now we could work on new code without worrying if we would break things.
-
-For startups, getting first to market is probably more important than
-building quality.
-
-Focus on good interfaces where you can throw away code that fulfills those
-interfaces. (remember throw away code, keep the tests?)
-
-Making code hard to maintain on purpose as a reminder that it should not be touched.
-    </aside>
-  </section>
-
-  <section id="tweetwire" data-background="images/tweetwire.jpg">
-    <h2>The TweetWire</h2>
-    <p>PHP</p>
-    <p>Django Models</p>
-    <p>Cron Job</p>
-    <p>Streaming Client</p>
-    <p>No Admin</p>
-    <p><code>&lt;a class="twitter-timeline" /&gt;</code></p>
-  </section>
-
-  <section data-background="images/goodcheapfast.png" data-background-size="40%">
-    <aside class="notes">
-Technical debt is an engineering trade-off. Good Cheap Fast, pick two. You can
-also just pick one if you want to.
-    </aside>
-  </section>
-
-  <section>
-    <h2>The exceptions</h2>
-    <p>
-      My general rule is if you can do everything in one screen of code, you write as crappy as you want.
-    </p>
-    <p>
-      If you're writing throw away code, it should truly be disposable.
-    </p>
-
-    <aside class="notes" data-markdown>
-
-In fact, it should be crappy. Introduce code smells on purpose. If you have
-beautiful well tested code that was terrible. Premature optimization
-
-Just remember: when was the last time a proof of concept was put into production? (EVERY TIME)
-
-Refactor vs throw away (prototype) MVP
-The specs and docs are more important than the code
-If you're suffering from bitrot, choose which pieces you care about. It's better
-to have solid pieces (your interface/api is still good, right?)
-
-Delivering value; don't let perfect be the enemy of good enough.
     </aside>
   </section>
 </section>
