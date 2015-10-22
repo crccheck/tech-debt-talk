@@ -96,7 +96,6 @@ debt.
         Gene Kim:
         <!-- <blockquote cite="The Phoenix Project, page 196"> -->
         <q>Left unchecked, technical debt will ensure that the only work that gets done is unplanned work!</q><br>
-        <q>Technical debt is what you feel the next time you want to make a change</q>
       </li>
       <li>Every line of code is technical debt</li>
     </ul>
@@ -177,29 +176,23 @@ you would write tests tomorrow. So just do it! Make your dreams come true! Just 
   </section>
 
   <section>
-    <h2>When to test</h2>
-    <p>If you're making an assumption, you should be writing a test.</p>
-    <p>You may decide to scrimp on tests in the beginning, but regression testing should be mandatory.</p>
-    <p>You will sleep better at night with good test coverage.</p>
-    <aside class="notes" data-markdown>
-Someone once told me, if you’re making an assumption, you should be writing a test. (it was at #austinjs)
-
-The reason regression testing is more important than tests is recurring bugs
-are a real embarrassment. “fool me once, shame on you. Fool me - you
-can't get fooled again.”
-    </aside>
+    <h2>When to test?</h2>
+    <p>
+      <img class="inline-img" data-src="images/nyan-reporter.gif" alt="">
+      <!-- https://coderwall.com/p/km0ghw/animate-your-nyan-mocha-reporter -->
+    </p>
   </section>
 
   <section id="zipcode">
-    <h2>Test your assumption</h2>
+    <p>If you're making an assumption, you should test it.</p>
     <pre><code class="lang-python" data-trim>
 def zipcode(s):
     """
     Get the 5 digit zipcode from any zipcode format.
 
-    >>> zipcode('12345')
-    "12345"
     >>> zipcode('12345-6789')
+    "12345"
+    >>> zipcode('12345')
     "12345"
     >>> zipcode(12345)
     "12345"
@@ -226,6 +219,17 @@ class HomeTests(TestCase):
     <p><small><a href="http://blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/" target="_blank">blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/</a></small>
     </p>
     <aside class="notes">
+    </aside>
+  </section>
+
+  <section>
+    <h2>When to test? <span style="text-transform: none;">(cont'd)</span></h2>
+    <p>Consider regression testing should be mandatory.</p>
+    <p>You will sleep better at night with good test coverage.</p>
+    <aside class="notes" data-markdown>
+Recurring bugs are a real embarrassment. “fool me once, shame on you. Fool me -
+you can't get fooled again.”
+
 NEXT: oh yeah, one more thing. if you’re not sure if you should write a test, then...
     </aside>
   </section>
