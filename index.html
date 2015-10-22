@@ -605,7 +605,6 @@ cultural fit questions.
   <section>
     <h2>Culture</h2>
     <p>Embrace failure (high trust)</p>
-    <p>Kill babies</p>
     <p>Learn how to say &ldquo;NO&rdquo;</p>
     <p><img class="inline-img" src="images/lucy-factory.gif" alt=""></p>
   </section>
@@ -678,17 +677,11 @@ cultural fit questions.
   <section data-background="images/value-over-time.jpg" data-background-size="34%" data-background-position="50% 97%">
     <h2>Trading technical debt</h2>
     <ul>
-      <li>Freezing content (Taco Bell Future)</li>
       <li>Deciding up front what you're optimizing for</li>
-      <li>Adding deliberate code smells</li>
+      <li>Technical debt is a deliberate design decision</li>
     </ul>
     <br><br><br><br><br><br>
     <aside class="notes" data-markdown>
-Taco Bell future. At the Texas Tribune, we had big sections
-of the site that broke all the time when we didn’t expect it to. So we traded
-some caching and maintainability to get out out of our monolithic Django app.
-Now we could work on new code without worrying if we would break things.
-
 For startups, getting first to market is probably more important than
 building quality.
 
@@ -697,6 +690,34 @@ interfaces. (remember throw away code, keep the tests?)
 
 Making code hard to maintain on purpose as a reminder that it should not be touched.
     </aside>
+  </section>
+
+  <section data-background="images/goodcheapfast.png" data-background-size="40%">
+    <aside class="notes">
+Technical debt is an engineering trade-off. Good Cheap Fast, pick two. You can
+also just pick one if you want to.
+    </aside>
+  </section>
+
+  <section>
+    <h2>Now what?</h2>
+    <p>Single responsibility principle</p>
+    <blockquote>Do one thing, do it well</blockquote>
+    <p><img src="images/as-seen-on-tv.png" alt="" class="inline-img" style="height: 1em;"> UNIX philosophy, Docker images, Microservices, OOP</p>
+    <p>Document how it works:<br>Throw away the code, reuse the interface</p>
+    <p>Kill babies</p>
+  </section>
+</section>
+
+<section>
+  <section data-background="images/all-the-things-x400.png" data-background-size="30%" data-background-position="80% 100%">
+    <h2>Taco Bell Future</h2>
+    <ul>
+      <li>Froze content with <code>wget</code></li>
+      <li>Old stuff still worked and looked the same</li>
+      <li>Deleted <em>all the things</em></li>
+    </ul>
+    <!-- <p><small><a href="https://github.com/datadesk/django-bakery">Django-Bakery</a></small></p> -->
   </section>
 
   <section id="tweetwire" data-background="images/tweetwire.jpg">
@@ -708,39 +729,8 @@ Making code hard to maintain on purpose as a reminder that it should not be touc
     <p>No Admin</p>
     <p><code>&lt;a class="twitter-timeline" /&gt;</code></p>
   </section>
-
-  <section data-background="images/goodcheapfast.png" data-background-size="40%">
-    <aside class="notes">
-Technical debt is an engineering trade-off. Good Cheap Fast, pick two. You can
-also just pick one if you want to.
-    </aside>
-  </section>
-
-  <section>
-    <h2>The exceptions</h2>
-    <p>
-      My general rule is if you can do everything in one screen of code, you write as crappy as you want.
-    </p>
-    <p>
-      If you're writing throw away code, it should truly be disposable.
-    </p>
-
-    <aside class="notes" data-markdown>
-
-In fact, it should be crappy. Introduce code smells on purpose. If you have
-beautiful well tested code that was terrible. Premature optimization
-
-Just remember: when was the last time a proof of concept was put into production? (EVERY TIME)
-
-Refactor vs throw away (prototype) MVP
-The specs and docs are more important than the code
-If you're suffering from bitrot, choose which pieces you care about. It's better
-to have solid pieces (your interface/api is still good, right?)
-
-Delivering value; don't let perfect be the enemy of good enough.
-    </aside>
-  </section>
 </section>
+
 
 <section>
   <section>
@@ -942,7 +932,6 @@ requirements and tells me when they break.
 
 <section data-background="images/life-could-be-worse.png" data-background-position="98% 50%" data-background-size="27%">
   <!-- Calvin and Hobbes by Bill Watterson -->
-  <h2>Homework</h2>
   <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
   <ul>
     <li>Get frustrated</li>
@@ -952,6 +941,7 @@ requirements and tells me when they break.
     <li>Treat fixing technical debt as a feature</li>
     <li>Clean as you code</li>
     <li>Foster a good coding culture</li>
+    <li>Single responsibility principle</li>
     <li>Everything must be repeatable</li>
     <li>Plan ahead for the whole lifecycle</li>
   </ul>
