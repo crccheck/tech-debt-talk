@@ -204,7 +204,7 @@ you would write tests tomorrow. So just do it! Make your dreams come true! Just 
 <section data-background="images/bitrot.jpg" data-background-position="98% 55%" data-background-size="25%">
   <h2>Bitrot / Software entropy</h2>
   <div style="float: right; width: 27%; height: 350px;">&nbsp;</div>
-  <p>If you're not touching something, it's getting worse</p>
+  <p>If you're not touching something,<br>it's getting worse</p>
   <p>If you don't have the manpower to continously touch all your code and documentation, that's a smell</p>
   <p>Improvement Kata - Mike Rother</p>
   <blockquote cite="http://reaktor.com/blog/applications-age-like-fish-data-ages-like-wine/">
@@ -227,7 +227,7 @@ You may have also heard about the Toyota Kata
       <li>Codeship</li>
       <li>Code Climate</li>
       <li>TravisCI</li>
-      <li>Make &amp; shell scripts</li>
+      <li>npm, Make, &amp; shell scripts</li>
     </ul>
     <p>
     <small><sup>&dagger;</sup>Original: <a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">Any system that must be deployed more often than monthly does so faster than you can get a cup of coffee.</a></small>
@@ -263,27 +263,43 @@ If you automate the routine things away, you get to do fun creative things.
   <section>
     <h2>Code quality</h2>
     <ul>
-      <li>Practice makes perfect. Always be iterating.</li>
-      <li>Keep things simple. Code that requires less context to understand is more readable.</li>
-      <li>Keep things short. Every LOC is debt.</li>
-      <li>Know your audience.</li>
-      <li>Choose readability over performance.</li>
+      <li>Practice makes perfect. Always be iterating</li>
+      <li>Know your audience</li>
       <li><code>import this</code></li>
+      <li>
+        Guardrails vs grooves
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Code quality (II)</h2>
+    <ul>
+      <li>
+        Write for deletablility
+      </li>
+      <li>Choose readability over performance</li>
+      <li>
+        Only use as many words as needed to convey the underlying logic and meaning to the readers
+      </li>
+      <li class="fragment">
+        Be terse
+      </li>
+    </ul>
+  </section>
+
+  <section data-background="images/i-know-this.jpg" data-background-position="50% 50%" class="dark">
+    <h3>Who can read your code?</h3>
+    <ul style="text-align: center;">
+      <li>Basics of coding</li>
+      <li>Expert in the language</li>
+      <li>Someone else within the org</li>
+      <li>Teammate/karaoke partner of 4 years</li>
+      <li>You just made something only you understand</li>
     </ul>
     <aside class="notes" data-markdown>
 Avoid magic and cleverness. I found that whenever I write clever code,
 I'll naturally refactor it to be dumber.
-
-oh, you just learned about __getattr__ and now you want to use it everywhere?
-Have fun trying to figure out why things randomly don’t work.
-
-The idea of keeping things simple isn’t to handicap yourself from using fancy
-language features, to avoid special snowflake patterns that are only used once
-and require more context to read.
-
-Know your audience -- If you're doing scientific python, using Pandas to
-do a filter is fine. Importing pandas just to do a simple filter in a view
-would be ridiculous.
     </aside>
   </section>
 
@@ -303,23 +319,6 @@ Special cases aren't special enough to break the rules.
 ...
     </code></pre>
   </section>
-
-  <section>
-    <ul>
-      <li>
-        Guardrails vs grooves
-      </li>
-      <li>
-        Write for deletablility
-      </li>
-      <li>
-        Only use as many words as needed to convey the underlying logic and meaning to the readers
-      </li>
-      <li class="fragment">
-        Be terse
-      </li>
-    </ul>
-  </section>
 </section>
 
 <section>
@@ -332,15 +331,6 @@ Special cases aren't special enough to break the rules.
 avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
     </aside>
   </section>
-</section>
-
-<section id="map" data-background="images/tamriel.jpg"></section>
-
-<section id="dragons" data-background="images/dragons.gif" data-background-size="80%">
-  <p></p>
-  <br><br><br>
-  <br><br><br>
-  <!-- https://soloswimmer.wordpress.com/2012/07/17/here-be-dragons/ -->
 </section>
 
 <section>
@@ -360,19 +350,6 @@ Maybe you're the boss, or maybe even big boss
 Spread the blame
 
 Coding under pressure
-    </aside>
-  </section>
-
-  <section>
-    <h2>No one to review your code?</h2>
-    <p>Sleep on it</p>
-    <p>Practice with others on open source projects</p>
-    <blockquote cite="Proverbs 27:17">
-    As iron sharpens iron, so one person sharpens another.
-    </blockquote>
-    <aside class="notes" data-markdown>
-Open pull requests anyways. Seeing your
-diff at a higher level will give you a new perspective.
     </aside>
   </section>
 </section>
@@ -396,7 +373,7 @@ the pull request. if it does, make a ticket to clean it up.
   <section>
     <h2>Boy scout rule</h2>
     <p><q>Leave this world a little better than you found it.</q><br>&ndash; Robert Baden Powell</p>
-    <p>If you have to touch a test to clean something, leave it alone for now.</p>
+    <p>If you have to touch a test, leave it alone for now.</p>
     <aside class="notes" data-markdown>
 http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule
 
@@ -406,7 +383,7 @@ Be Prepared?
   </section>
 
   <section>
-    <h2>Code review is more than reviewing code</h2>
+    <h3>Code review is more than reviewing code</h3>
     <!-- Needed to left justify all this -->
     <div style="display: inline-block; text-align: left;">
       <ul>
@@ -470,33 +447,13 @@ a Vary cookie to page that did not have one before.
   <ul>
     <li>tmux + vim</li>
     <li>Driver + Navigator</li>
-    <li>Pair <br>Programming <br>Ping <br>Pong <br>Pattern</li>
+    <li>Pair Programming</li><li>Ping Pong</li>
   </ul>
   <aside class="notes" data-markdown>
 this costs the most time, but has a excellent long term benefits. Code review
 with even tighter feedback loop.
 
 PING PONG: async pair programming
-  </aside>
-</section>
-
-
-<section id="teams" data-background="images/PowerRangers.jpg">
-  <!-- captain planet? -->
-  <!-- TMNT -->
-  <div class="text-shadowbox dark">
-    <h2>Teams</h2>
-    <p>Guess what? Software teams are just like other teams</p>
-    <p>The team should care about controlling technical debt</p>
-    <p>Robots can help</p>
-    <p><q>Past you is the worst coworker ever</q></p>
-  </div>
-  <aside class="notes" data-markdown>
-what about if you’re alone? well, you just have to learn through experience.
-working with past self is a lot like working with a terrible coworker.
-
-When I interview now, I assume they passed technical test already. I ask
-cultural fit questions.
   </aside>
 </section>
 
@@ -510,7 +467,7 @@ cultural fit questions.
       <li>CI/CD</li>
       <li>Reduce friction</li>
       <li>Release early, release often</li>
-      <li>Use analytics</li>
+      <li>Collect data (KPI)</li>
     </ul>
   </section>
 
@@ -522,9 +479,9 @@ cultural fit questions.
   </section>
 
   <section id="table">
-    <p>
-      Write up concrete plans to reduce technical debt as actionable items
-    </p>
+    <h3>
+      Plan to reduce technical debt with actionable items
+    </h3>
     <table style="font-size: 0.7em;">
       <thead>
         <tr>
@@ -777,6 +734,10 @@ docker run --rm -p 8000:1947 crccheck/tech-debt
   <section></section>
   <section id="derp" data-background="images/derp.jpg"></section>
   <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
+  <section id="dragons" data-background="images/dragons.gif" data-background-size="80%">
+    <!-- https://soloswimmer.wordpress.com/2012/07/17/here-be-dragons/ -->
+  </section>
+
 </section>
       </div>
 
