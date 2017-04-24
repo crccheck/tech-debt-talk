@@ -275,9 +275,6 @@ If you automate the routine things away, you get to do fun creative things.
   <section>
     <h2>Code quality (II)</h2>
     <ul>
-      <li>
-        Write for deletablility
-      </li>
       <li>Choose readability over performance</li>
       <li>
         Only use as many words as needed to convey the underlying logic and meaning to the readers
@@ -288,15 +285,21 @@ If you automate the routine things away, you get to do fun creative things.
     </ul>
   </section>
 
+  <section>
+    <h3>Always be iterating</h3>
+    <p>Write for deletablility</p>
+    <p>Single responsibility principle</p>
+    <p>Document how it works:<br>Throw away the code, reuse the interface</p>
+    <p>Kill babies</p>
+  </section>
+
   <section data-background="images/i-know-this.jpg" data-background-position="50% 50%" class="dark">
     <h3>Who can read your code?</h3>
-    <ul style="text-align: center;">
-      <li>Basics of coding</li>
-      <li>Expert in the language</li>
-      <li>Someone else within the org</li>
-      <li>Teammate/karaoke partner of 4 years</li>
-      <li>You just made something only you understand</li>
-    </ul>
+    <p>Basics of coding<br>
+    Expert in the language<br>
+    Someone else within the org<br>
+    Teammate/karaoke partner of 4 years<br>
+    You just made something only you understand</p>
     <aside class="notes" data-markdown>
 Avoid magic and cleverness. I found that whenever I write clever code,
 I'll naturally refactor it to be dumber.
@@ -472,7 +475,7 @@ PING PONG: async pair programming
   </section>
 
   <section>
-    <h2>Culture</h2>
+    <h2>Culture (II)</h2>
     <p>Embrace failure (high trust)</p>
     <p>Learn how to say &ldquo;NO&rdquo;</p>
     <p><img class="inline-img" src="images/lucy-factory.gif" alt=""></p>
@@ -573,13 +576,10 @@ also just pick one if you want to.
     </aside>
   </section>
 
-  <section>
-    <h2>Now what?</h2>
-    <p>Single responsibility principle</p>
-    <blockquote>Do one thing, do it well</blockquote>
-    <p><img src="images/as-seen-on-tv.png" alt="" class="inline-img" style="height: 1em;"> UNIX philosophy, Docker images, Microservices, OOP</p>
-    <p>Document how it works:<br>Throw away the code, reuse the interface</p>
-    <p>Kill babies</p>
+  <section data-background="images/id4-programming.jpg">
+    <aside class="notes">
+When you're hurtling to your own doom, maybe prioritize fast
+    </aside>
   </section>
 </section>
 
@@ -647,9 +647,13 @@ requirements and tells me when they break.
   </section>
 </section>
 
+<section data-background-image="images/memento.jpg">
+  <h2>Code like you have short-term memory loss<h2>
+</section>
+
 <section>
   <section id="videos">
-    <h2>Reading</h2>
+    <h2>Watching</h2>
     <li><a href="https://youtu.be/SaHbtEeu37M">Docker and DevOps</a> by Gene Kim, Dockercon ’14, 38m45s</li>
     <li>
       <a href="https://www.youtube.com/watch?v=URztqq1kiqI">Inheriting a Sloppy Codebase</a>
@@ -664,16 +668,16 @@ requirements and tells me when they break.
   </section>
 
   <section id="reading">
-    <h2>Reading (for real)</h2>
-    <ul style="font-size: 0.75em;">
-      <li><a href="http://www.crccheck.com/blog/managing-technical-debt-in-django-projects/">My blog post</a></li>
+    <h2>Reading</h2>
+    <ul style="font-size: 0.55em;">
+      <li><a href="http://www.crccheck.com/blog/managing-technical-debt-in-django-projects/">Managing Technical Debt in Django Projects</a></li>
+      <li><a href="https://github.com/crccheck/crccheck.github.io/wiki/Navigating-Code">Navigating code</a></li>
       <li><a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">A healthy platform checklist - ed can hack</a></li>
-      <li>
-      <a href="http://higherorderlogic.com/2010/07/bad-code-isnt-technical-debt-its-an-unhedged-call-option/">Bad code isn't Technical Debt, it's an unhedged Call Option</a>
-      </li>
-      <li>
-      <a href="http://bigeng.io/post/118399425343/why-the-way-we-look-at-technical-debt-is-wrong">The way we look at technical debt is wrong</a>
-      </li>
+      <li><a href="https://medium.com/@rdsubhas/10-modern-software-engineering-mistakes-bc67fbef4fc8">Modern Software Over-Engineering Mistakes</a></li>
+      <li><a href="http://www.daedtech.com/human-cost-tech-debt/">The Human Cost of Tech Debt</a></li>
+      <li><a href="http://programmingisterrible.com/post/139222674273/write-code-that-is-easy-to-delete-not-easy-to">Write code that is easy to delete, not easy to extend</a></li>
+      <li><a href="http://higherorderlogic.com/2010/07/bad-code-isnt-technical-debt-its-an-unhedged-call-option/">Bad code isn't Technical Debt, it's an unhedged Call Option</a></li>
+      <li><a href="http://bigeng.io/post/118399425343/why-the-way-we-look-at-technical-debt-is-wrong">The way we look at technical debt is wrong</a></li>
       <li><a href="http://steveblank.com/2015/05/19/organizational-debt-is-like-technical-debt-but-worse/">Organizational Debt is like Technical debt – but worse</a></li>
       <li><a href="http://martinfowler.com/bliki/TechnicalDebt.html">martinfowler / Technical Debt</a></li>
       <li><a href="http://devops.com/2014/10/07/qa-gene-kim-technical-debt/">Q&amp;A: Gene Kim</a></li>
@@ -687,19 +691,6 @@ requirements and tells me when they break.
     &nbsp;
     <img class="fragment" data-src="images/phoenix-project.jpg" alt="" height="500px" style="border: 0;">
   </section>
-
-  <section data-background="images/bartkira-mutation.png" data-background-position="50% 100%" data-background-size="55%">
-    <h2>Similar discussions</h2>
-    <ul>
-      <li>Microservices vs Monoliths</li>
-      <li>Not invented here syndrome</li>
-      <li>Feature creep</li>
-      <li>Insert product development buzzword here <a href="http://projects.wsj.com/buzzwords2014/">*</a></li>
-    </ul>
-    <p>&nbsp;</p>
-    <p>&nbsp;</p>
-      <!-- Frans Boukas, Barkira project -->
-  </section>
 </section>
 
 <section data-background="images/life-could-be-worse.png" data-background-position="98% 50%" data-background-size="27%">
@@ -707,11 +698,11 @@ requirements and tells me when they break.
   <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
   <ul>
     <li>Get frustrated</li>
-    <li>Get lazy &ndash; Automate away routine tasks</li>
+    <li>Get lazy &ndash; Automate tedious things</li>
     <li>Faster feedback loops</li>
     <li>Always be touching</li>
-    <li>Treat fixing technical debt as a feature</li>
     <li>Clean as you code</li>
+    <li>Code like you have memory loss</li>
     <li>Foster a good coding culture</li>
     <li>Single responsibility principle</li>
     <li>Everything must be repeatable</li>
@@ -720,9 +711,9 @@ requirements and tells me when they break.
 </section>
 
 <section>
-  <section>
+  <section data-background="images/bartkira-mutation.png" data-background-position="50% 100%" data-background-size="55%">
+    <!-- Frans Boukas, Barkira project -->
     <h1>Thanks!</h1>
-    <img data-src="images/sausage.png" alt="" style="border: 0; padding: 0.3em 0.7em 0.7em; border-radius: 1em; height: 150px;">
     <p>
       <a href="https://github.com/crccheck/tech-debt-talk">github/crccheck/tech-debt-talk</a><br>
       <!-- <a href="https://hub.docker.com/r/crccheck/tech-debt/">docker/crccheck/tech-debt</a><br> -->
@@ -730,7 +721,11 @@ requirements and tells me when they break.
     <pre><code data-trim>
 docker run --rm -p 8000:1947 crccheck/tech-debt
     </code></pre>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
   </section>
+
   <section></section>
   <section id="derp" data-background="images/derp.jpg"></section>
   <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
