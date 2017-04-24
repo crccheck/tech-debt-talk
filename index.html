@@ -48,7 +48,7 @@
 
 
 <section data-background="images/pony-stone.png" data-background-position="50% 90%" data-background-size="40%">
-  <h2 style="margin-bottom: 2em;">Solving world hunger, peace in the middle east, and technical debt</h2>
+  <h2 style="margin-bottom: 2em;">Solving world hunger,<br>peace in the middle east,<br>and technical debt</h2>
   <!-- django pony http://www.istockphoto.com/vector/fairy-tale-vector-elements-3355498?st=3eb57c4 -->
   <!-- Stone of Triumph from The Simpsons Tapped Out game -->
 </section>
@@ -317,6 +317,23 @@ Special cases aren't special enough to break the rules.
 ...
     </code></pre>
   </section>
+
+  <section>
+    <ul>
+      <li>
+        Guardrails vs grooves
+      </li>
+      <li>
+        Write for deletablility
+      </li>
+      <li>
+        Only use as many words as needed to convey the underlying logic and meaning to the readers
+      </li>
+      <li class="fragment">
+        Be terse
+      </li>
+    </ul>
+  </section>
 </section>
 
 <section>
@@ -340,17 +357,21 @@ avoid silos. code review/pair programming are just the beginning of making sure 
   <!-- https://soloswimmer.wordpress.com/2012/07/17/here-be-dragons/ -->
 </section>
 
-<section id="twisted" data-background="images/twisted.jpg"></section>
-
 <section>
-  <h2>Related topics</h2>
-  <ul>
-    <li>#nocomments &ndash; Do comments help or hurt readability?</li>
-    <li>Cyclomatic complexity &ndash; quantify readability</li>
-    <li><a href="https://pypi.python.org/pypi/mccabe">McCabe</a></li>
-    <li>PEP8</li>
-    <li>PyFlakes</li>
-  </ul>
+  <section data-background="images/bees.gif">
+    <h1>Everything is technical debt</h1>
+    <ul>
+      <li class="fragment">Code</li>
+      <li class="fragment">Comments</li>
+      <li class="fragment">Documentation</li>
+      <li class="fragment">Process</li>
+    </ul>
+  </section>
+  <section data-background="images/ottingers-comment-rules.jpg">
+    <p style="margin-top: 11em;">
+      <a href="https://twitter.com/tottinge/status/169918277957582849">@tottinge</a>
+    </p>
+  </section>
 </section>
 
 <section>
@@ -408,6 +429,8 @@ the pull request. if it does, make a ticket to clean it up.
     <p><q>Leave this world a little better than you found it.</q><br>&ndash; Robert Baden Powell</p>
     <p>If you have to touch a test to clean something, leave it alone for now.</p>
     <aside class="notes" data-markdown>
+http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule
+
 Do a good turn daily?
 Be Prepared?
     </aside>
@@ -544,27 +567,35 @@ cultural fit questions.
       </thead>
       <tbody>
         <tr>
-          <td>Reduce homepage query count</td>
-            <td>
-              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
-              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
-              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
-              <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
-            </td>
-            <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
-            <td>┬──┬</td>
+          <td>Reduce bundle size</td>
+          <td>
+            <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+            <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+          </td>
+          <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
+          <td>┬─────┬</td>
         </tr>
         <tr>
-          <td>Fix inconsistent migrations</td>
-            <td><img class="inline-img" src="images/fire.png" alt="" style="height: 1em;"></td>
-            <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
-            <td>┬───┬</td>
-        </tr>
-        <tr>
-          <td>Add CSRF</td>
-          <td><img class="inline-img" src="images/fire.png" alt="" style="height: 1em;"></td>
+          <td>Refactor that thing to be not terrible</td>
+          <td></td>
           <td>
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+            <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+          </td>
+          <td>┬─────┬</td>
+        </tr>
+        <tr>
+          <td>Make HTTP tests run faster</td>
+          <td></td>
+          <td>
+            <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
+          </td>
+          <td>┬───┬</td>
+        </tr>
+        <tr>
+          <td>Convert links to HTTPS</td>
+          <td></td>
+          <td>
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
@@ -572,14 +603,11 @@ cultural fit questions.
           <td>┬─┬</td>
         </tr>
         <tr>
-          <td>Refactor Polls views to CBV</td>
-          <td></td>
-          <td></td>
-          <td>┬─┬</td>
-        </tr>
-        <tr>
-          <td>Upgrade from Django 1.5 to 1.8</td>
-          <td></td>
+          <td>Upgrade from Node 4 to 6</td>
+          <td>
+            <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+            <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
+          </td>
           <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
           <td>┬─────┬</td>
         </tr>
@@ -636,7 +664,7 @@ also just pick one if you want to.
       <h2>Clean as you cook</h2>
       <p>Delete code! That's what source control is for.</p>
       <p>If you think you'll need to toggle something, don't use comments, use a feature switch.</p>
-      Open tickets for things you find (see boy scout rule)
+      <p>Open tickets for things you find you can't fix</p>
     </div>
   </section>
 
