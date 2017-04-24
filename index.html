@@ -48,7 +48,7 @@
 
 
 <section data-background="images/pony-stone.png" data-background-position="50% 90%" data-background-size="40%">
-  <h1 style="margin-bottom: 2em;">Mjanaging Tjechnical Djebt</h1>
+  <h2 style="margin-bottom: 2em;">Solving world hunger, peace in the middle east, and technical debt</h2>
   <!-- django pony http://www.istockphoto.com/vector/fairy-tale-vector-elements-3355498?st=3eb57c4 -->
   <!-- Stone of Triumph from The Simpsons Tapped Out game -->
 </section>
@@ -61,15 +61,6 @@
       <a href="https://twitter.com/ccrrccrccrr/" target="_blank">@ccrrccrccrr</a><br>
       <a href="#">imdb/chris chang(II)</a><br>
       <a href="https://www.pinterest.com/cpanel/" target="_blank">pinterest/cpanel</a>
-    </p>
-    <p>
-      <a href="http://www.tabbedout.com" target="_blank">
-        <img class="text-logo" src="images/tabbedout.png" alt="TabbedOut" style="height: 2em">
-      </a><br>
-      formerly <a href="http://www.texastribune.org" target="_blank">
-        <img class="text-logo" src="images/the-texas-tribune.png" alt="The Texas Tribune"
-             style="position: relative; top: 5px;">
-      </a>
     </p>
   </div>
   <aside class="notes" data-markdown>
@@ -103,11 +94,12 @@ debt.
     <aside class="notes" data-markdown>
 EVERY LINE: Every line was written for a reason, you have to know why
 
-NEXT: No definition in Urban Dictionary
+NEXT: No definition in Urban Dictionary in 2015, but someone added it in 2016
     </aside>
   </section>
 
   <section data-background="images/urban-dictionary-technical-debt.png" data-background-size="50%"></section>
+  <section data-background="images/urban-dictionary-technical-debt-2017.png" data-background-size="50%"></section>
 </section>
 
 <section>
@@ -183,45 +175,6 @@ you would write tests tomorrow. So just do it! Make your dreams come true! Just 
     </p>
   </section>
 
-  <section id="zipcode">
-    <p>If you're making an assumption, you should test it.</p>
-    <pre><code class="lang-python" data-trim>
-def zipcode(s):
-    """
-    Get the 5 digit zipcode from any zipcode format.
-
-    >>> zipcode('12345-6789')
-    "12345"
-    >>> zipcode('12345')
-    "12345"
-    >>> zipcode(12345)
-    "12345"
-    >>> zipcode(1337)
-    "01337"
-    >>> zipcode(None)
-    ValueError: s must be a US postal zip code
-    """
-    return s[:5]
-    </code></pre>
-    <!-- <script src="https://gist.github.com/crccheck/620f03ba30522f2d8d4b.js"></script> -->
-  </section>
-
-  <section>
-    <h2>Don't have a single test?</h2>
-    <p>Gotta start somewhere.</p>
-    <pre><code class="lang-python" data-trim>
-from django.test import TestCase
-
-class HomeTests(TestCase):
-    def test_homepage_loads(self):
-        self.client.get('/')
-    </code></pre>
-    <p><small><a href="http://blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/" target="_blank">blog.doismellburning.co.uk/2015/08/05/the-most-efficient-django-test/</a></small>
-    </p>
-    <aside class="notes">
-    </aside>
-  </section>
-
   <section>
     <h2>When to test? <span style="text-transform: none;">(cont'd)</span></h2>
     <p>Consider regression testing should be mandatory.</p>
@@ -285,10 +238,10 @@ You may have also heard about the Toyota Kata
     </blockquote>
     <ul>
       <li>Jenkins</li>
+      <li>Codeship</li>
+      <li>Code Climate</li>
       <li>TravisCI</li>
-      <li>Tox</li>
       <li>Make &amp; shell scripts</li>
-      <li><a href="http://docs.python-guide.org/en/latest/scenarios/ci/">docs.python-guide.org/en/latest/scenarios/ci/</a></li>
     </ul>
     <p>
     <small><sup>&dagger;</sup>Original: <a href="http://edcanhack.com/2014/09/a-healthy-platform-checklist/">Any system that must be deployed more often than monthly does so faster than you can get a cup of coffee.</a></small>
@@ -364,57 +317,14 @@ Special cases aren't special enough to break the rules.
 ...
     </code></pre>
   </section>
-
-  <section>
-    <pre><code class="python" data-trim>
-from operators import attrgetter
-
-friends = [
-    aquacorg,
-    corgnelius,
-    stumphery,
-    gatsby,
-    scout,
-    tibby,
-    winston,
-]
-
-# Which is better?
-accounts = map(attrgetter('instagram'), friends)
-
-accounts = [x.instagram for x in friends]
-    </code></pre>
-  </section>
 </section>
 
 <section>
-  <section id="pizza">
-    <h2>Pizza Story</h2>
-    <p>
-      <img class="inline-img" data-src="images/gimmie-pizza.gif" alt="" style="height: 300px;">
-    </p>
-  </section>
-  <section>
-  <!-- pizzahut.com pizza builder -->
-    <table>
-      <tr>
-        <td><img class="inline-img" data-src="images/pizza-silos.png" alt=""></td>
-        <td><img class="inline-img" data-src="images/pizza-one.png" alt=""></td>
-        <td><img class="inline-img" data-src="images/pizza-devops.png" alt=""></td>
-      </tr>
-      <tr>
-        <td align=center>Code Silos</td>
-        <td align=center>Specialist</td>
-        <td align=center>Unicorns</td>
-      </tr>
-    </table>
-  </section>
-
   <section>
     <h2>Avoiding code silos</h2>
     <p>Make yourself obsolete</p>
     <p>Pretend you're training your replacement</p>
-    <p>Could you go on vacation without your laptop?</p>
+    <p>Could you go on vacation without your laptop?<br><em>the bus factor</em></p>
     <aside class="notes" data-markdown>
 avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
     </aside>
@@ -720,60 +630,6 @@ also just pick one if you want to.
 </section>
 
 <section>
-  <section data-background="images/all-the-things-x400.png" data-background-size="30%" data-background-position="80% 100%">
-    <h2>Taco Bell Future</h2>
-    <ul>
-      <li>Froze content with <code>wget</code></li>
-      <li>Old stuff still worked and looked the same</li>
-      <li>Deleted <em>all the things</em></li>
-      <li>New stuff was easy to write</li>
-    </ul>
-    <!-- <p><small><a href="https://github.com/datadesk/django-bakery">Django-Bakery</a></small></p> -->
-  </section>
-
-  <section id="tweetwire" data-background="images/tweetwire.jpg">
-    <h2>The TweetWire</h2>
-    <p>PHP</p>
-    <p>Django Models</p>
-    <p>Cron Job</p>
-    <p>Streaming Client</p>
-    <p>No Admin</p>
-    <p><code>&lt;a class="twitter-timeline" /&gt;</code></p>
-  </section>
-</section>
-
-
-<section>
-  <section>
-    <h2>Django is great</h2>
-    <p>Writing tests is easy</p>
-    <p>Less boilerplate</p>
-    <p>Great community</p>
-  </section>
-
-  <section>
-    <h2>Don't customize the Admin</h2>
-    <p>The admin is a developer interface, not a CMS</p>
-    <p>Writing your own seems like it's more technical debt, but you'll end up with a better user experience</p>
-    <p>Admin customizations == tight coupling</p>
-    <aside class="notes" data-markdown>
-Are you writing Selenium tests for custom admin behavior? Because that's what
-you have to do if you start customizing the admin. Lots of intersecting code.
-If you need a custom interface, write it. Bits of the admin are often re-usable
-outside the admin (permissions, require-login). Use third party admin
-integrations that are maintained, don’t do it yourself. If you write something
-that changes, are you going to read through every Django release note? since
-admin things tend to be hacky, more expensive to fix/maintain in general.
-    </aside>
-  </section>
-
-  <section>
-    <p>A partial list of admin packages you can use instead of coding your own:</p>
-    <a href="https://www.djangopackages.com/grids/g/admin-interface/" target="_blank">
-      <img data-src="images/admin.png" alt="">
-    </a>
-  </section>
-
   <section data-background="images/dirty_dishes.jpg">
     <!-- https://commons.wikimedia.org/wiki/File:Dirty_dishes.jpg -->
     <div class="text-shadowbox dark">
@@ -794,88 +650,40 @@ admin things tend to be hacky, more expensive to fix/maintain in general.
 
   <section>
     <h2>Readable tests</h2>
-    <p>Keep boilerplate out.</p>
-    <pre><code data-trim class="lang-python">
-class ArticleManagerTests(TestCase):
-    def test_stuff(self):
-        a = Article(active=True,
-                    title='Corgi Beach Day',
-                    slug='corgi-beach-day',
-                    text='Corgs got sand on their stumpers'
-                    pub_date='2015-09-31')
-        self.assertIn(a, Article.objects.active())
+    <ol>
+      <li><b>S</b>etup</li>
+      <li><b>E</b>xercise</li>
+      <li><b>V</b>erify</li>
+      <li><b>T</b>eardown</li>
+    </ol>
 
-    def test_active_returns_only_active_articles(self):
-        article = ArticleFactory(active=True)
-        self.assertIn(article, Article.objects.active())
-    </code></pre>
+    <ol style="margin-left: 2em; vertical-align: top;">
+      <li><b>A</b>rrange</li>
+      <li><b>A</b>ct</li>
+      <li><b>A</b>ssert</li>
+    </ol>
+
+    <ul style="margin-top: 1em; font-size: smaller;">
+      <li>
+        <a href="http://www.agile-code.com/blog/the-anatomy-of-a-unit-test/">The anatomy of a unit test</a>
+      </li>
+      <li>
+        <a href="https://github.com/CondeNast-Copilot/autopilot/wiki/Tests,-Scope,-and-State-Bleed">autopilot/wiki/Tests,-Scope,-and-State-Bleed</a>
+      </li>
+    </ul>
     <aside class="notes">
        Factoryboy makes it so the attributes you specify are the ones that are relevant to the test.
     </aside>
   </section>
 
-  <section>
-    <h2>Use unique names</h2>
-    <pre><code data-trim>
-$ ./manage.py shell_plus
-# Shell Plus Model Imports
-from django.contrib.admin.models import LogEntry
-from django.contrib.auth.models import Group, Permission, User
-from django.contrib.contenttypes.models import ContentType
-from django.contrib.sessions.models import Session
-from tx_elevators.models import Building, Elevator
-# Shell Plus Django Imports
-from django.utils import timezone
-from django.conf import settings
-from django.core.cache import cache
-from django.db.models import Avg, Count, F, Max, Min, Sum, Q, Prefetch
-from django.core.urlresolvers import reverse
-from django.db import transaction
->>> Elevator.objects.count()
-51952
-    </code></pre>
-    <aside class="notes">
-Yes, shell plus gives you ways around this, but at the cost of more technical debt.
-    </aside>
-  </section>
-
-  <section>
-    <h2>Avoid the test client</h2>
-    <p>Don’t use it! For unit tests.</p>
-    <p>Do Use it! For integration tests</p>
-    <pre><code class="nohighlight" style="text-align: center;">urls
-request middleware
-views (dispatch/get/get_context_data)
-response middleware
-context_processor</code></pre>
-    <aside class="notes" data-markdown>
-It’s useful if you’re testing routes, headers, vary cookie.
-    </aside>
-  </section>
-
-  <section>
-    <h2>Avoid model inheritance</h2>
-    <p>Mixins and Base classes</p>
-    <p>Hurts readability and performance</p>
-    <p><img src="images/graphviz.png" alt="" style="height: 266px;"></p>
-    <!-- http://django.es/blog/crear-una-imagen-de-nuestros-modelos-con-django-command-extensions/ -->
-    <aside class="notes" data-markdown>
-
-Django Extensions has examples for what a good model mixin is:
-TimeStampedModel, TitleDescriptionModel, TitleSlugDescriptionModel
-
-django-extensions.readthedocs.org/en/latest/model_extensions.html
-    </aside>
-  </section>
-
   <section id="fresh" data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
     <h2>Stay fresh</h2>
-    <p><code>requirements.txt</code>:</p>
+    <p><code>npm-check -su</code>:</p>
     <p>Every pull request, if a version can be bumped, bump it.</p>
     <pre><code class="lang-sh" data-trim>
-$ pip list --outdated
-$ bundle outdated
 $ npm outdated
+$ npm-check -su
+$ yarn update-interactive
     </code></pre>
     <p>This only works if you have test coverage!</p>
     <aside class="notes" data-markdown>
@@ -970,7 +778,6 @@ docker run --rm -p 8000:1947 crccheck/tech-debt
     </code></pre>
   </section>
   <section></section>
-  <section id="taco" data-background="images/taco.jpg"></section>
   <section id="derp" data-background="images/derp.jpg"></section>
   <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
 </section>
