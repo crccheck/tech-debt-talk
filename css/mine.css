@@ -40,6 +40,18 @@ q:after {
   margin: 0;
 }
 
+.reveal .hero {
+  background: none;
+  border: 0;
+  box-shadow: none;
+  display: block;
+	height: 75vh;
+  left: 50%;
+	position: fixed;
+  transform: translate(-50%, -50%);
+	top: 50%;
+}
+
 .reveal sup {
   font-size: 0.6em;
 }

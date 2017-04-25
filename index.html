@@ -64,18 +64,13 @@
     </p>
   </div>
   <aside class="notes" data-markdown>
-I’ve been using Django since version 1.2? My 4th DjangoCon.
-
-I've only been a professional software developer for 6 years this is what I've
-seen and these are the practical things I've seen to help combat technical
-debt.
-</aside>
+  </aside>
 </section>
 
 <section class="slide">
   <section data-background="images/badcable16.jpg">
   <div class="text-shadowbox dark">
-    <h2>What is technical debt?</h2>
+    <h3>What is technical debt?</h3>
     <ul>
       <li>
         <!-- <blockquote cite="https://en.wikipedia.org/wiki/Technical_debt"> -->
@@ -88,7 +83,7 @@ debt.
         <!-- <blockquote cite="The Phoenix Project, page 196"> -->
         <q>Left unchecked, technical debt will ensure that the only work that gets done is unplanned work!</q><br>
       </li>
-      <li>Every line of code is technical debt</li>
+      <li>Every line your write is technical debt</li>
     </ul>
   </div>
     <aside class="notes" data-markdown>
@@ -137,11 +132,6 @@ with these again :niran-laugh:
     </ul>
     <aside class="notes" data-markdown>
 Frustration levels are high because you never deliver, never move forward
-
-Django lets you build things very quickly. So developers will start off loving
-Django. But if you build without regard to technical debt, you stop being able
-to deliver. Django turns into a nightmare and now Django becomes the scapegoat
-for your organization.
     </aside>
   </section>
 
@@ -162,10 +152,11 @@ for your organization.
     </ul>
   </section>
   <section data-background="images/if-you-should.jpg">
-    <p class="dark">Write less code</p>
+    <p class="fragment dark">Write less code</p>
+    <img class="fragment hero" src="images/juicero.png">
   </section>
   <section data-background="images/ottingers-comment-rules.jpg">
-    <p style="margin-top: 5em;" class="dark">
+    <p style="margin-top: 5em;" class="dark fragment">
       Write fewer comments
     </p>
     <p style="margin-top: 5em;">
@@ -201,12 +192,10 @@ you would write tests tomorrow. So just do it! Make your dreams come true! Just 
   <div style="float: right; width: 27%; height: 350px;">&nbsp;</div>
   <p>If you're not touching something,<br>it's getting worse</p>
   <p>If you don't have the manpower to continously touch all your code and documentation, that's a smell</p>
-  <p>Improvement Kata - Mike Rother</p>
   <blockquote cite="http://reaktor.com/blog/applications-age-like-fish-data-ages-like-wine/">
     Applications age like fish, data ages like wine
   </blockquote>
   <aside class="notes">
-You may have also heard about the Toyota Kata
   </aside>
 </section>
 
@@ -261,15 +250,7 @@ If you automate the routine things away, you get to do fun creative things.
       <li>Practice makes perfect. Always be iterating</li>
       <li>Know your audience</li>
       <li><code>import this</code></li>
-      <li>
-        Guardrails vs grooves
-      </li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Code quality (II)</h2>
-    <ul>
+      <!-- <li>Guardrails vs grooves</li> -->
       <li>Choose readability over performance</li>
       <li>
         Only use as many words as needed to convey the underlying logic and meaning to the readers
@@ -280,24 +261,33 @@ If you automate the routine things away, you get to do fun creative things.
     </ul>
   </section>
 
-  <section>
+  <section data-background-image="images/redgreen.png" data-background-size="20%" data-background-position="0% 100%">
     <h3>Always be iterating</h3>
     <p>Write for deletablility</p>
     <p>Single responsibility principle</p>
     <p>Document how it works:<br>Throw away the code, reuse the interface</p>
     <p>Kill babies</p>
+    <p>"That's the way we've always done it"</p>
+    <aside class="notes" data-markdown>
+Code is going to get deleted eventually, might as well delete it now
+    </aside>
   </section>
 
-  <section data-background="images/i-know-this.jpg" data-background-position="50% 50%" class="dark">
-    <h3>Who can read your code?</h3>
-    <p>Basics of coding<br>
-    Expert in the language<br>
-    Someone else within the org<br>
-    Teammate/karaoke partner of 4 years<br>
-    You just made something only you understand</p>
+  <section data-background="images/i-know-this.jpg" data-background-position="50% 50%">
+    <div class="text-shadowbox">
+
+      <h3>Who can read your code?</h3>
+      <p style="font-size: 0.95em;">Basics of coding<br>
+        Expert in the language<br>
+        Someone else within the org<br>
+        Teammate/karaoke partner of 4 years<br>
+        You just made something only you understand</p>
+    </div>
     <aside class="notes" data-markdown>
 Avoid magic and cleverness. I found that whenever I write clever code,
 I'll naturally refactor it to be dumber.
+
+Didn't we choose JavaScript so code could be maintained by the widest audience?
     </aside>
   </section>
 
@@ -316,18 +306,6 @@ Readability counts.
 Special cases aren't special enough to break the rules.
 ...
     </code></pre>
-  </section>
-</section>
-
-<section>
-  <section>
-    <h2>Avoiding code silos</h2>
-    <p>Make yourself obsolete</p>
-    <p>Pretend you're training your replacement</p>
-    <p>Could you go on vacation without your laptop?<br><em>the bus factor</em></p>
-    <aside class="notes" data-markdown>
-avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
-    </aside>
   </section>
 </section>
 
@@ -371,7 +349,8 @@ the pull request. if it does, make a ticket to clean it up.
   <section>
     <h2>Boy scout rule</h2>
     <p><q>Leave this world a little better than you found it.</q><br>&ndash; Robert Baden Powell</p>
-    <p>If you have to touch a test, leave it alone for now.</p>
+    <p>If you have to touch a test, leave it alone for now</p>
+    <p>If you find something terrible, file an issue</p>
     <aside class="notes" data-markdown>
 http://programmer.97things.oreilly.com/wiki/index.php/The_Boy_Scout_Rule
 
@@ -388,26 +367,16 @@ Be Prepared?
         <li>Repeatable?</li>
         <li>Documentated?</li>
         <li>Maintainable? (Does the feature justify the technical debt?)</li>
+        <li><code>PULL_REQUEST_TEMPLATE.md</code></li>
       </ul>
       <p><a href="https://www.youtube.com/watch?v=wf-BqAjZb8M">Raymond Hettinger - Beyond PEP 8</a></p>
     </div>
     <aside class="notes" data-markdown>
-Code review is more than just checking syntax and style.
-
-REPEATABLE EXAMPLE: Last week (August 2015) I used a utility and it wasn't
-working, so I went back to the pull request and saw that I was using the
-utility the wrong way.
-
-DOCUMENTED EXAMPLE: If you're adding a new feature to the CMS, updating and
-communicating to users that there's a change is part of definition of done.
-
-EXAMPLE: You may have decided to implement something with a custom templatetag
-but during code review, you decide to use a jquery one-liner.
     </aside>
   </section>
 
   <section>
-    <h2>Technical debt note</h2>
+    <h3>Technical debt note</h3>
     <blockquote cite="http://www.lbb.state.tx.us/FiscalNotes.aspx">
       A fiscal note is a written estimate of the costs, savings, revenue gain, or revenue loss that may result from implementation of requirements in a bill or joint resolution. It serves as a tool to help legislators better understand how a bill might impact the state budget as a whole, individual agencies, and in some instances, local governments.
     </blockquote>
@@ -428,7 +397,6 @@ a Vary cookie to page that did not have one before.
 > increases to add an oft requested feature. there's very light test coverage.
 
 > decreases because this adds documentation and removes non .env file workflows
-
     </aside>
   </section>
 </section>
@@ -457,20 +425,20 @@ PING PONG: async pair programming
 
 <section>
   <section id="culture">
-    <h2>Culture</h2>
+    <h3>Culture</h3>
     <p>Get faster feedback loops</p>
     <ul>
       <li>Sprints</li>
       <li>Code review</li>
-      <li>CI/CD</li>
       <li>Reduce friction</li>
+      <li>CI/CD</li>
       <li>Release early, release often</li>
       <li>Collect data (KPI)</li>
     </ul>
   </section>
 
   <section>
-    <h2>Culture (II)</h2>
+    <h3>Culture (II)</h3>
     <p>Embrace failure (high trust)</p>
     <p>Learn how to say &ldquo;NO&rdquo;</p>
     <p><img class="inline-img" src="images/lucy-factory.gif" alt=""></p>
@@ -478,7 +446,7 @@ PING PONG: async pair programming
 
   <section id="table">
     <h3>
-      Plan to reduce technical debt with actionable items
+      Keeping track of technical debt
     </h3>
     <table style="font-size: 0.7em;">
       <thead>
@@ -497,7 +465,7 @@ PING PONG: async pair programming
             <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
           </td>
           <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
-          <td>┬─────┬</td>
+          <td><code>┬─────┬</code></td>
         </tr>
         <tr>
           <td>Refactor that thing to be not terrible</td>
@@ -506,7 +474,7 @@ PING PONG: async pair programming
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
           </td>
-          <td>┬─────┬</td>
+          <td><code>┬─────┬</code></td>
         </tr>
         <tr>
           <td>Make HTTP tests run faster</td>
@@ -514,7 +482,7 @@ PING PONG: async pair programming
           <td>
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
           </td>
-          <td>┬───┬</td>
+          <td><code>┬───┬</code></td>
         </tr>
         <tr>
           <td>Convert links to HTTPS</td>
@@ -524,7 +492,7 @@ PING PONG: async pair programming
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
           </td>
-          <td>┬─┬</td>
+          <td><code>┬─┬</code></td>
         </tr>
         <tr>
           <td>Upgrade from Node 4 to 6</td>
@@ -533,7 +501,7 @@ PING PONG: async pair programming
             <img class="inline-img" src="images/fire.png" alt="" style="height: 1em;">
           </td>
           <td><img class="inline-img" src="images/poop.png" alt="" style="height: 1em;"></td>
-          <td>┬─────┬</td>
+          <td><code>┬─────┬</code></td>
         </tr>
       </tbody>
     </table>
@@ -549,8 +517,8 @@ PING PONG: async pair programming
   <section data-background="images/value-over-time.jpg" data-background-size="34%" data-background-position="50% 97%">
     <h2>Trading technical debt</h2>
     <ul>
-      <li>Deciding up front what you're optimizing for</li>
-      <li>Technical debt is a deliberate design decision</li>
+      <li>Decide up front what you're optimizing for</li>
+      <li>Technical debt can be a deliberate design decision</li>
     </ul>
     <br><br><br><br><br><br>
     <aside class="notes" data-markdown>
@@ -579,71 +547,72 @@ When you're hurtling to your own doom, maybe prioritize fast
 </section>
 
 <section>
-  <section data-background="images/dirty_dishes.jpg">
-    <!-- https://commons.wikimedia.org/wiki/File:Dirty_dishes.jpg -->
-    <div class="text-shadowbox dark">
-      <h2>Clean as you cook</h2>
-      <p>Delete code! That's what source control is for.</p>
-      <p>If you think you'll need to toggle something, don't use comments, use a feature switch.</p>
-      <p>Open tickets for things you find you can't fix</p>
-    </div>
-  </section>
+  <h3>Avoide code silos</h3>
+  <p>Make yourself obsolete</p>
+  <p>Pretend you're training your replacement</p>
+  <p>Could you go on vacation without your laptop?<br><em>the bus factor</em></p>
+  <aside class="notes" data-markdown>
+avoid silos. code review/pair programming are just the beginning of making sure code knowledge is shared.
+  </aside>
+</section>
 
-  <section id="names" data-background="images/aintfoundshit.jpg" data-background-position="96% 50%" data-background-size="23%">
-    <h2>Naming things</h2>
-    <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
-    <p>Is it greppable?</p>
-    <p>Find/Replace friendly?</p>
-    <p>Name variables (especially in tests) so they read like English</p>
-  </section>
+<section data-background="images/dirty_dishes.jpg">
+  <!-- https://commons.wikimedia.org/wiki/File:Dirty_dishes.jpg -->
+  <div class="text-shadowbox dark">
+    <h2>Clean as you cook</h2>
+    <p>Delete code! That's what source control is for.</p>
+    <p>If you think you'll need to toggle something, never use comments, use a feature switch.</p>
+    <p>Fix problems as you see them</p>
+    <p>Open tickets for things you find you can't fix</p>
+  </div>
+</section>
 
-  <section>
-    <h2>Readable tests</h2>
-    <ol>
-      <li><b>S</b>etup</li>
-      <li><b>E</b>xercise</li>
-      <li><b>V</b>erify</li>
-      <li><b>T</b>eardown</li>
-    </ol>
+<section>
+  <h2>Write readable tests</h2>
+  <ol>
+    <li><b>S</b>etup</li>
+    <li><b>E</b>xercise</li>
+    <li><b>V</b>erify</li>
+    <li><b>T</b>eardown</li>
+  </ol>
 
-    <ol style="margin-left: 2em; vertical-align: top;">
-      <li><b>A</b>rrange</li>
-      <li><b>A</b>ct</li>
-      <li><b>A</b>ssert</li>
-    </ol>
+  <ol style="margin-left: 2em; vertical-align: top;">
+    <li><b>A</b>rrange</li>
+    <li><b>A</b>ct</li>
+    <li><b>A</b>ssert</li>
+  </ol>
 
-    <ul style="margin-top: 1em; font-size: smaller;">
-      <li>
-        <a href="http://www.agile-code.com/blog/the-anatomy-of-a-unit-test/">The anatomy of a unit test</a>
-      </li>
-      <li>
-        <a href="https://github.com/CondeNast-Copilot/autopilot/wiki/Tests,-Scope,-and-State-Bleed">autopilot/wiki/Tests,-Scope,-and-State-Bleed</a>
-      </li>
-    </ul>
-    <aside class="notes">
-       Factoryboy makes it so the attributes you specify are the ones that are relevant to the test.
-    </aside>
-  </section>
+  <ul style="margin-top: 1em; font-size: smaller;">
+    <li>
+      <a href="http://www.agile-code.com/blog/the-anatomy-of-a-unit-test/">The anatomy of a unit test</a>
+    </li>
+    <li>
+      <a href="https://github.com/CondeNast-Copilot/autopilot/wiki/Tests,-Scope,-and-State-Bleed">autopilot/wiki/Tests,-Scope,-and-State-Bleed</a>
+    </li>
+  </ul>
+  <aside class="notes">
+     Factoryboy makes it so the attributes you specify are the ones that are relevant to the test.
+  </aside>
+</section>
 
-  <section id="fresh" data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
-    <h2>Stay fresh</h2>
-    <p><code>npm-check -su</code>:</p>
-    <p>Every pull request, if a version can be bumped, bump it.</p>
-    <pre><code class="lang-sh" data-trim>
+<section id="fresh" data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
+  <h2>Stay fresh</h2>
+  <p>Upgrade dependencies every pull request</p>
+  <pre><code class="lang-sh" data-trim>
 $ npm outdated
 $ npm-check -su
 $ yarn update-interactive
-    </code></pre>
-    <p>This only works if you have test coverage!</p>
-    <aside class="notes" data-markdown>
+  </code></pre>
+  <p>This only works if you have test coverage!</p>
+  <br><br><br>
+  <aside class="notes" data-markdown>
 Something I've always wanted to try is a Jenkins job that checks for updated
 requirements and tells me when they break.
-    </aside>
-  </section>
+  </aside>
 </section>
 
 <section data-background-image="images/memento.jpg">
-  <h2>Code like you have short-term memory loss<h2>
+  <h2 class="text-shadowbox">Code like you have short-term memory loss<h2>
 </section>
 
 <section>
