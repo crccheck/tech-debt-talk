@@ -21,16 +21,16 @@ q:after {
 }
 */
 .text-shadowbox {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.7);
   display: inline-block;
   padding: 0.2em 0.5em 0 !important;
   border-radius: 0.5em;
 }
 .dark {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
 .text-shadowbox h2, .text-shadowbox p {
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.7);
 }
 
 .reveal .inline-img {
@@ -54,6 +54,18 @@ q:after {
 
 .reveal sup {
   font-size: 0.6em;
+}
+
+.fancycap *::first-letter {
+  font-weight: bold;
+  color: #42affa;
+}
+
+.reveal .footnote {
+  bottom: -1em;
+  left: 1em;
+  font-size: 0.6em;
+  position: fixed;
 }
 
 /* OVERRIDES */
