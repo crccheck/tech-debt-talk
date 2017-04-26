@@ -99,11 +99,9 @@ EVERY LINE: Every line was written for a reason, you have to know why
       <li class="fragment">
         When you can’t deliver a feature because you don’t know what will break
       </li>
-      <li class="" style="visibility: hidden;">
-        If you’re using a rapid development framework and can’t rapidly develop
-      </li>
-      <li class="" style="visibility: hidden;">&ldquo;That's the way we've always done it&rdquo;</p>
-      <li class="" style="visibility: hidden;">&ldquo;it works for me&rdquo;</li>
+      <li class="" style="visibility: hidden;">&nbsp;</li>
+      <li class="" style="visibility: hidden;">&nbsp;</li>
+      <li class="" style="visibility: hidden;">&nbsp;</li>
       <li class="" style="visibility: hidden;">
         Everything is on fire all the time
         <img src="images/this-is-fine.png" alt="">
@@ -119,10 +117,7 @@ with these again :niran-laugh:
     <ul>
       <li>When you fix one bug only to create another</li>
       <li>When you can’t deliver a feature or security patch because you don’t know what will break</li>
-      <li class="fragment">
-        If you’re using a rapid development framework and can’t rapidly develop
-      </li>
-      <li class="fragment">&ldquo;That's the way we've always done it&rdquo;</p>
+      <li class="fragment">&ldquo;That's the way we've always done it&rdquo;</li>
       <li class="fragment">&ldquo;It works for me&rdquo;</li>
       <li class="fragment">
       <a href="http://gunshowcomic.com/648">
@@ -153,7 +148,7 @@ Frustration levels are high because you never deliver, never move forward
       <li class="fragment">Process</li>
     </ul>
   </section>
-  <section data-background="images/if-you-should.jpg">
+  <section data-background-image="images/if-you-should.jpg" data-background-size="contain">
     <p class="fragment dark">Write less code</p>
     <img class="fragment hero" src="images/juicero.png">
   </section>
@@ -170,7 +165,10 @@ Frustration levels are high because you never deliver, never move forward
     <p class="dark">How many times has the README been out of date? Write only the documentation you need</p>
   </section>
   <section data-background-image="images/wall-e-autopilot.jpg">
-    <p class="dark">Automate everything</p>
+    <p class="dark">Get lazy. Automate everything</p>
+    <aside class="notes" data-markdown>
+My parents always said I was lazy. Who knew that it would become a desirable trait in software?
+    </aside>
   </section>
 </section>
 
@@ -273,7 +271,7 @@ Code is going to get deleted eventually, might as well delete it now
     </aside>
   </section>
 
-  <section data-background="images/i-know-this.jpg" data-background-position="50% 50%">
+  <section data-background-image="images/i-know-this.jpg" data-background-position="80% 70%">
     <div class="text-shadowbox">
 
       <h3>Who can read your code?</h3>
@@ -443,8 +441,12 @@ PING PONG: async pair programming
   <section>
     <h3>Culture (II)</h3>
     <p>Embrace failure (high trust)</p>
+    <p>&nbsp;</p>
     <p>Learn how to say &ldquo;NO&rdquo;</p>
     <p><img class="inline-img" src="images/lucy-factory.gif" alt=""></p>
+    <aside class="notes" data-markdown>
+People (product) depend on engineers to give accurate estimates.
+    </aside>
   </section>
 
   <section id="table">
@@ -480,7 +482,7 @@ PING PONG: async pair programming
           <td><code>┬─────┬</code></td>
         </tr>
         <tr>
-          <td>Make HTTP tests run faster</td>
+          <td>Make tests run faster</td>
           <td></td>
           <td>
             <img class="inline-img" src="images/poop.png" alt="" style="height: 1em;">
@@ -594,6 +596,10 @@ avoid silos. code review/pair programming are just the beginning of making sure 
   </aside>
 </section>
 
+<section data-background-image="images/memento.jpg">
+  <h2 class="text-shadowbox">Code like you have short-term memory loss<h2>
+</section>
+
 <section id="fresh" data-background="images/fresh-comp.png" data-background-position="0% 100%" data-background-size="25%">
   <h2>Stay fresh</h2>
   <p>Upgrade dependencies every pull request</p>
@@ -603,10 +609,12 @@ $ npm-check -su
 $ yarn update-interactive
   </code></pre>
   <p>This only works if you have test coverage!</p>
+  <pre><code class="lang-sh" data-trim>
+$ git commit -am "greenkeeper"
+  </code></pre>
   <br><br><br>
   <aside class="notes" data-markdown>
-Something I've always wanted to try is a Jenkins job that checks for updated
-requirements and tells me when they break.
+Docs usually only track the latest version
   </aside>
 </section>
 
@@ -677,6 +685,18 @@ docker run --rm -p 8000:1947 crccheck/tech-debt
   <section id="joke" data-background="images/thatsthejoke.jpg" data-background-size="59%"></section>
   <section id="dragons" data-background="images/dragons.gif" data-background-size="80%">
     <!-- https://soloswimmer.wordpress.com/2012/07/17/here-be-dragons/ -->
+  </section>
+  <section data-background="images/life-could-be-worse.png" data-background-position="98% 53%" data-background-size="27%">
+    <!-- Calvin and Hobbes by Bill Watterson -->
+    <h3>Talk amongst yourselves</h3>
+    <div style="float: right; width: 24%; height: 400px;">&nbsp;</div>
+    <ul>
+      <li>Not invented here</li>
+      <li>Microservices</li>
+      <li>Single responsibility principle</li>
+      <li>Always rewrite, never refactor</li>
+      <li>Premature optimization</li>
+    </ul>
   </section>
 
 </section>
